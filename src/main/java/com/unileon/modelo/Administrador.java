@@ -1,19 +1,47 @@
 package com.unileon.modelo;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name="administrador")
 public class Administrador {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@Column
 	private String nombre;
+	
+	@Column
 	private String primerApellido;
+	
+	@Column
 	private String segundoApellido;
+	
+	@Column
 	private String email;
-	private String fechaNacimiento;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date fechaNacimiento;
+	
+	@Column
 	private String DNI;
 	
 	public Administrador() {
 		
 	}
 	
-	public Administrador(int id, String nombre, String primerApellido, String segundoApellido, String email, String fechaNacimiento, String DNI) {
+	public Administrador(int id, String nombre, String primerApellido, String segundoApellido, String email, Date fechaNacimiento, String DNI) {
 		this.setId(id);
 		this.setNombre(nombre);
 		this.setPrimerApellido(primerApellido);
@@ -63,11 +91,11 @@ public class Administrador {
 		this.email = email;
 	}
 
-	public String getFechaNacimiento() {
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
