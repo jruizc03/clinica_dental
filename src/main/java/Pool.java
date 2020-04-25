@@ -11,7 +11,7 @@ public class Pool {
 	public static DataSource getDataSource() {
 		if (ds == null) {
 			ds = new BasicDataSource();
-			ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+			ds.setDriverClassName("com.mysql.jdbc.Driver");
 			ds.setUsername("root");
 			ds.setPassword("1234");
 			ds.setUrl("jdbc:mysql://localhost:3306/clinica_dental");

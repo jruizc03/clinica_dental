@@ -1,5 +1,6 @@
+package com.unileon.modelo;
 
-public class Administrador {
+public class Auxiliar {
 	private int id;
 	private String nombre;
 	private String primerApellido;
@@ -8,11 +9,11 @@ public class Administrador {
 	private String fechaNacimiento;
 	private String DNI;
 	
-	public Administrador() {
+	public Auxiliar() {
 		
 	}
 	
-	public Administrador(int id, String nombre, String primerApellido, String segundoApellido, String email, String fechaNacimiento, String DNI) {
+	public Auxiliar(int id, String nombre, String primerApellido, String segundoApellido, String email, String fechaNacimiento, String DNI) {
 		this.setId(id);
 		this.setNombre(nombre);
 		this.setPrimerApellido(primerApellido);
@@ -77,6 +78,4 @@ public class Administrador {
 	public void setDNI(String dNI) {
 		DNI = dNI;
 	}
-	
-	
 }

@@ -1,3 +1,4 @@
+package com.unileon.modelo;
 
 public class Inventario {
 	private int id;

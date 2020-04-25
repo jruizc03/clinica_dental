@@ -1,5 +1,6 @@
+package com.unileon.modelo;
 
-public class Auxiliar {
+public class Paciente {
 	private int id;
 	private String nombre;
 	private String primerApellido;
@@ -7,12 +8,13 @@ public class Auxiliar {
 	private String email;
 	private String fechaNacimiento;
 	private String DNI;
+	private String direccion;
 	
-	public Auxiliar() {
+	public Paciente() {
 		
 	}
 	
-	public Auxiliar(int id, String nombre, String primerApellido, String segundoApellido, String email, String fechaNacimiento, String DNI) {
+	public Paciente(int id, String nombre, String primerApellido, String segundoApellido, String email, String fechaNacimiento, String DNI, String direccion) {
 		this.setId(id);
 		this.setNombre(nombre);
 		this.setPrimerApellido(primerApellido);
@@ -20,6 +22,7 @@ public class Auxiliar {
 		this.setEmail(email);
 		this.setFechaNacimiento(fechaNacimiento);
 		this.setDNI(DNI);
+		this.setDireccion(direccion);
 	}
 
 	public int getId() {
@@ -76,5 +79,13 @@ public class Auxiliar {
 
 	public void setDNI(String dNI) {
 		DNI = dNI;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 }
