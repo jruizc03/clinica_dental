@@ -17,6 +17,7 @@ public class Doctor {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="idDoctor")
 	private int idDoctor;
 	
 	@Column(name="nombreDoctor")

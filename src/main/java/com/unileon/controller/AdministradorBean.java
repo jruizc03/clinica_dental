@@ -36,6 +36,8 @@ public class AdministradorBean {
 		a2.setFechaNacimiento(fecha2);
 		a2.setDNI("71746035L");
 		
+		listaAdmins.add(a1);
+		listaAdmins.add(a2);
 		return listaAdmins; 
 	}
 }
