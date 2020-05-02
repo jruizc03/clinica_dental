@@ -17,24 +17,25 @@ public class Auxiliar {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int idAuxiliar;
 	
-	@Column
+	@Column(name="nombreAuxiliar")
 	private String nombre;
 	
-	@Column
+	@Column(name="primerApellidoAuxiliar")
 	private String primerApellido;
 	
-	@Column
+	@Column(name="segundoApellidoAuxiliar")
 	private String segundoApellido;
 	
-	@Column
+	@Column(name="emailAuxiliar")
 	private String email;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fechaNacimientoAuxiliar")
 	private Date fechaNacimiento;
 	
-	@Column
+	@Column(name="AuxiliarDNI")
 	private String DNI;
 	
 	public Auxiliar() {
@@ -52,11 +53,11 @@ public class Auxiliar {
 	}
 
 	public int getId() {
-		return id;
+		return idAuxiliar;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idAuxiliar) {
+		this.idAuxiliar = idAuxiliar;
 	}
 
 	public String getNombre() {

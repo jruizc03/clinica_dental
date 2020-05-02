@@ -17,24 +17,25 @@ public class Administrador {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int idAdmin;
 	
-	@Column
+	@Column(name="nombreAdmin")
 	private String nombre;
 	
-	@Column
+	@Column(name="primerApellidoAdmin")
 	private String primerApellido;
 	
-	@Column
+	@Column(name="segundoApellidoAdmin")
 	private String segundoApellido;
 	
-	@Column
+	@Column(name="emailAdmin")
 	private String email;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fechaNacimientoAdmin")
 	private Date fechaNacimiento;
 	
-	@Column
+	@Column(name="AdminDNI")
 	private String DNI;
 	
 	public Administrador() {
@@ -52,11 +53,11 @@ public class Administrador {
 	}
 
 	public int getId() {
-		return id;
+		return idAdmin;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idAdmin) {
+		this.idAdmin = idAdmin;
 	}
 
 	public String getNombre() {

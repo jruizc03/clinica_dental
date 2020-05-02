@@ -17,27 +17,28 @@ public class Doctor {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int idDoctor;
 	
-	@Column
+	@Column(name="nombreDoctor")
 	private String nombre;
 	
-	@Column
+	@Column(name="primerApellidoDoctor")
 	private String primerApellido;
 	
-	@Column
+	@Column(name="segundoApellidoDoctor")
 	private String segundoApellido;
 	
-	@Column
+	@Column(name="emailDoctor")
 	private String email;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fechaNacimientoDoctor")
 	private Date fechaNacimiento;
 	
-	@Column
+	@Column(name="DNIDoctor")
 	private String DNI;
 	
-	@Column
+	@Column(name="especialidadDoctor")
 	private String especialidad;
 	
 	public Doctor() {
@@ -56,11 +57,11 @@ public class Doctor {
 	}
 
 	public int getId() {
-		return id;
+		return idDoctor;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idDoctor) {
+		this.idDoctor = idDoctor;
 	}
 
 	public String getNombre() {
