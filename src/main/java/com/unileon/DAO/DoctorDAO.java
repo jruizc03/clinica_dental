@@ -1,5 +1,5 @@
-package com.unileon.controller;
+package com.unileon.DAO;
 
-public class DoctorController {
+public class DoctorDAO {
 
 }

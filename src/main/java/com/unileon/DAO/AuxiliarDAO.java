@@ -1,5 +1,5 @@
-package com.unileon.controller;
+package com.unileon.DAO;
 
-public class AuxiliarController {
+public class AuxiliarDAO {
 
 }
