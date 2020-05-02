@@ -41,10 +41,10 @@ public class HistorialDAO
 	}
 	
 	//Obtener todos los historiales
-	public List<Historial> obtenerCitas()
+	public List<Historial> obtenerHistoriales()
 	{
 		List<Historial> listaHistoriales = new ArrayList<>();
-		Query query = entity.createQuery("SELECT h FROM historial h");
+		Query query = entity.createQuery("SELECT h FROM Historial h");
 		listaHistoriales = query.getResultList();
 		return listaHistoriales;
 	}

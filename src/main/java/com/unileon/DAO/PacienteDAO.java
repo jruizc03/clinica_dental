@@ -23,7 +23,7 @@ public class PacienteDAO
 		}
 		
 		//Editar paciente
-		public void editarHistorial(Paciente pac)
+		public void editarPaciente(Paciente pac)
 		{
 			entity.getTransaction().begin();
 			entity.merge(pac);
@@ -44,7 +44,7 @@ public class PacienteDAO
 		public List<Paciente> obtenerPacientes()
 		{
 			List<Paciente> listaPacientes = new ArrayList<>();
-			Query query = entity.createQuery("SELECT p FROM paciente p");
+			Query query = entity.createQuery("SELECT p FROM Paciente p");
 			listaPacientes = query.getResultList();
 			return listaPacientes;
 		}

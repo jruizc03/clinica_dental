@@ -44,7 +44,7 @@ public class CitaDAO
 	public List<Cita> obtenerCitas()
 	{
 		List<Cita> listaCitas = new ArrayList<>();
-		Query query = entity.createQuery("SELECT c FROM cita c");
+		Query query = entity.createQuery("SELECT c FROM Cita c");
 		listaCitas = query.getResultList();
 		return listaCitas;
 	}

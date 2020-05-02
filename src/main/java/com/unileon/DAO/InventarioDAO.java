@@ -44,7 +44,7 @@ public class InventarioDAO
 	public List<Inventario> obtenerHerramienta()
 	{
 		List<Inventario> listaHerramientas = new ArrayList<>();
-		Query query = entity.createQuery("SELECT h FROM inventario h");
+		Query query = entity.createQuery("SELECT h FROM Inventario h");
 		listaHerramientas = query.getResultList();
 		return listaHerramientas;
 	}
