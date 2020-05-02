@@ -11,7 +11,7 @@ import com.unileon.modelo.Paciente;
 @ManagedBean(name="pacienteBean")
 @RequestScoped
 public class PacienteBean {
-	public List<Paciente> obtenerCitas()
+	public List<Paciente> obtenerPacientes()
 	{
 		PacienteDAO pacDAO = new PacienteDAO();
 		return pacDAO.obtenerPacientes();

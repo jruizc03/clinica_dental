@@ -11,7 +11,7 @@ import com.unileon.modelo.Inventario;
 @ManagedBean(name="inventarioBean")
 @RequestScoped
 public class InventarioBean {
-	public List<Inventario> obtenerCitas()
+	public List<Inventario> obtenerInventario()
 	{
 		InventarioDAO invDAO = new InventarioDAO();
 		return invDAO.obtenerHerramienta();

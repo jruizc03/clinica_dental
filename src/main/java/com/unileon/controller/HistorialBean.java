@@ -11,7 +11,7 @@ import com.unileon.modelo.Historial;
 @ManagedBean(name="historialBean")
 @RequestScoped
 public class HistorialBean {
-	public List<Historial> obtenerCitas()
+	public List<Historial> obtenerHistorial()
 	{
 		HistorialDAO histDAO = new HistorialDAO();
 		return histDAO.obtenerHistoriales();
