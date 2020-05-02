@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class Inventario {
 	
 	@Id
+	@Column(name="idInstrumento")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	

@@ -16,6 +16,7 @@ import javax.persistence.TemporalType;
 public class Paciente {
 	
 	@Id
+	@Column(name="idPaciente")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	

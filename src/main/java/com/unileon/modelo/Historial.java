@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class Historial {
 	
 	@Id
+	@Column(name="idHistorial")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	

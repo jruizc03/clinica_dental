@@ -2,6 +2,7 @@ package com.unileon.modelo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,10 +16,12 @@ import javax.persistence.TemporalType;
 public class Cita {
 	
 	@Id
+	@Column(name="idCita")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fechaCita")
 	private Date fecha;
 	
 	public Cita() {
