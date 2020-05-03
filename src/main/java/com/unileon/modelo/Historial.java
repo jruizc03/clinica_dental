@@ -16,10 +16,10 @@ public class Historial {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@Column
+	@Column(name="dolencia")
 	private String dolencia;
 	
-	@Column
+	@Column(name="tratamiento")
 	private String tratamiento;
 	
 	public Historial() {
