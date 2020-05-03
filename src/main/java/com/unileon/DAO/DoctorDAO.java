@@ -25,7 +25,7 @@ public class DoctorDAO {
 		entity.getTransaction().begin();
 		entity.merge(doctor);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
 	//buscar doctor

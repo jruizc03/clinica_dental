@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core">	
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />    
+    <title>Editar Doctores</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2" cellspacing="20" border="1">
+			<f:facet name="header">
+				<h:outputText value="Editar Doctor"></h:outputText>
+			</f:facet>
+			
+			<h:outputText value="Editar nombre"></h:outputText>  
+			<h:inputText value="#{doctor.nombre}"></h:inputText> 
+			
+			<h:outputText value="Editar primer apellido"></h:outputText>  
+			<h:inputText value="#{doctor.primerApellido}"></h:inputText>  
+			
+			<h:outputText value="Editar segundo apellido"></h:outputText>  
+			<h:inputText value="#{doctor.segundoApellido}"></h:inputText>  
+			
+			<h:outputText value="Editar email"></h:outputText>  
+			<h:inputText value="#{doctor.email}"></h:inputText>  
+			
+			<h:outputText value="Editar fecha de nacimiento"></h:outputText>  
+			<h:inputText value="#{doctor.fechaNacimiento}"></h:inputText>  
+			
+			<h:outputText value="Editar DNI"></h:outputText>  
+			<h:inputText value="#{doctor.DNI}"></h:inputText>
+			
+			<h:outputText value="Editar especialidad"></h:outputText>  
+			<h:inputText value="#{doctor.especialidad}"></h:inputText>
+			
+			<f:facet name="footer">
+				<h:commandButton action="#{doctorBean.actualizar(doctor)}" value="Actualizar"></h:commandButton>
+			</f:facet>       
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
