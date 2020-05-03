@@ -32,14 +32,14 @@ public class DoctorDAO {
 	public Doctor buscar(int id) {
 		Doctor a = new Doctor();
 		a = entity.find(Doctor.class, id);
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 		return a;
 	}
 	
 	//obtener todos los doctores
-	public List<Doctor> obtenerAuxiliares(){
+	public List<Doctor> obtenerDoctores(){
 		List<Doctor> listaDoctores = new ArrayList<>();
-		Query q = entity.createQuery("SELECT d FROM DOCTOR d");
+		Query q = entity.createQuery("SELECT d FROM Doctor d");
 		listaDoctores = q.getResultList();
 		return listaDoctores;
 	}

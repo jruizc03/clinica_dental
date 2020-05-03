@@ -39,7 +39,7 @@ public class AuxiliarDAO {
 	//obtener todos los auxiliares
 	public List<Auxiliar> obtenerAuxiliares(){
 		List<Auxiliar> listaAuxiliares = new ArrayList<>();
-		Query q = entity.createQuery("SELECT a FROM AUXILIAR a");
+		Query q = entity.createQuery("SELECT a FROM Auxiliar a");
 		listaAuxiliares = q.getResultList();
 		return listaAuxiliares;
 	}

@@ -39,7 +39,7 @@ public class AdministradorDAO {
 	//obtener todos los administradores
 	public List<Administrador> obtenerAdmins(){
 		List<Administrador> listaAdmins = new ArrayList<>();
-		Query q = entity.createQuery("SELECT a FROM ADMINISTRADOR a");
+		Query q = entity.createQuery("SELECT a FROM Administrador a");
 		listaAdmins = q.getResultList();
 		return listaAdmins;
 	}

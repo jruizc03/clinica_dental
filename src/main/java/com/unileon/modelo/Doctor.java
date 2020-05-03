@@ -36,7 +36,7 @@ public class Doctor {
 	@Column(name="fechaNacimientoDoctor")
 	private Date fechaNacimiento;
 	
-	@Column(name="DNIDoctor")
+	@Column(name="doctorDNI")
 	private String DNI;
 	
 	@Column(name="especialidadDoctor")
