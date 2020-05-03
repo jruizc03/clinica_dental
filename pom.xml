@@ -4,12 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.ecodeup.jpa_jsf_crud</groupId>
-  <artifactId>JSF_JPA_CRUD</artifactId>
+  <groupId>com.unileon.clinica_dental</groupId>
+  <artifactId>clinica_dental</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>JSF_JPA_CRUD Maven Webapp</name>
+  <name>clinica_dental Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -72,7 +72,7 @@
   </dependencies>
 
   <build>
-    <finalName>JSF_JPA_CRUD</finalName>
+    <finalName>clinica_dental</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
