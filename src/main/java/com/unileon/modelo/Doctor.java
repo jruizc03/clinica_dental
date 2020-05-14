@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="doctor")
-public class Doctor {
+public class Doctor{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

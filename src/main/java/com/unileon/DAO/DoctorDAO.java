@@ -17,7 +17,7 @@ public class DoctorDAO {
 		entity.getTransaction().begin();
 		entity.persist(doctor);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
 	//editar doctor
@@ -34,6 +34,15 @@ public class DoctorDAO {
 		a = entity.find(Doctor.class, id);
 		//JPAUtil.shutdown();
 		return a;
+	}
+	
+	//eliminar doctor
+	public void eliminar(int id) {
+		Doctor d = new Doctor();
+		d = entity.find(Doctor.class, id);
+		entity.getTransaction().begin();
+		entity.remove(d);
+		entity.getTransaction().commit();
 	}
 	
 	//obtener todos los doctores

@@ -7,14 +7,14 @@
 	<meta charset="utf-8" name="viewport"
 		content="width=device-width, initial-scale=1"
 		http-equiv="X-UA-Conpatible" />
-	<title>Edicion de doctores</title>
+	<title>Creacion de doctor</title>
 </h:head>
 <h:body>
-
-	<h:form>
+<h1>Nuevo doctor</h1>
+<h:form>
 		<h:panelGrid columns="2" cellspacing="20" border="1">
 			<f:facet name="header">
-				<h:outputText value="Editar doctor"></h:outputText>
+				<h:outputText value="Nuevo doctor"></h:outputText>
 			</f:facet>
 
 			<h:outputText value="Nombres"></h:outputText>
@@ -39,12 +39,11 @@
 			<h:inputText value="#{doctor.especialidad}"></h:inputText>
 			
 			<f:facet name="footer">
-				<p:commandButton immediate="true" action="#{doctorBean.actualizar(doctor)}" value="Actualizar"></p:commandButton>
+				<p:commandButton immediate="true" action="#{doctorBean.guardar(doctor)}" value="Guardar"></p:commandButton>
 			</f:facet>
 			
 		</h:panelGrid>
 
 	</h:form>
-
 </h:body>
 </html>
