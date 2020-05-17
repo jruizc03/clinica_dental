@@ -10,40 +10,39 @@
 	<title>Creacion de doctor</title>
 </h:head>
 <h:body>
-<h1>Nuevo doctor</h1>
-<h:form>
+	<h:form>
+		<p:panel styleclass="session" header="Nuevo Doctor">
 		<h:panelGrid columns="2" cellspacing="20" border="1">
 			<f:facet name="header">
 				<h:outputText value="Nuevo doctor"></h:outputText>
 			</f:facet>
 
 			<h:outputText value="Nombres"></h:outputText>
-			<h:inputText value="#{doctor.nombre}"></h:inputText>
+			<p:inputText value="#{doctor.nombre}" required="true" requiredMessage="Campo requerido"></p:inputText>
 
 			<h:outputText value="Primer apellido"></h:outputText>
-			<h:inputText value="#{doctor.primerApellido}"></h:inputText>
+			<p:inputText value="#{doctor.primerApellido}" required="true" requiredMessage="Campo requerido"></p:inputText>
 			
 			<h:outputText value="Segundo apellido"></h:outputText>
-			<h:inputText value="#{doctor.segundoApellido}"></h:inputText>
+			<p:inputText value="#{doctor.segundoApellido}" required="true" requiredMessage="Campo requerido"></p:inputText>
 			
 			<h:outputText value="Email"></h:outputText>
-			<h:inputText value="#{doctor.email}"></h:inputText>
+			<p:inputText value="#{doctor.email}" required="true" requiredMessage="Campo requerido"></p:inputText>
 
 			<h:outputText value="Fecha de nacimiento"></h:outputText>
-			<h:inputText value="#{doctor.fechaNacimiento}"></h:inputText>
+			<p:inputText value="#{doctor.fechaNacimiento}" required="true" requiredMessage="Campo requerido"></p:inputText>
 
 			<h:outputText value="DNI"></h:outputText>
-			<h:inputText value="#{doctor.DNI}"></h:inputText>
+			<p:inputText value="#{doctor.DNI}" required="true" requiredMessage="Campo requerido"></p:inputText>
 			
 			<h:outputText value="Especialidad"></h:outputText>
-			<h:inputText value="#{doctor.especialidad}"></h:inputText>
+			<p:inputText value="#{doctor.especialidad}" required="true" requiredMessage="Campo requerido"></p:inputText>
 			
 			<f:facet name="footer">
 				<p:commandButton immediate="true" action="#{doctorBean.guardar(doctor)}" value="Guardar"></p:commandButton>
 			</f:facet>
-			
 		</h:panelGrid>
-
+		</p:panel>
 	</h:form>
 </h:body>
 </html>
