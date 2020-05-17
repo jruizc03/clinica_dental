@@ -16,10 +16,10 @@ public class Inventario {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@Column
+	@Column(name="existencias")
 	private int existencias;
 	
-	@Column
+	@Column(name="nombreInstrumento")
 	private String nombreInstrumento;
 	
 	public Inventario() {

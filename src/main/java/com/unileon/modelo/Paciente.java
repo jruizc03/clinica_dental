@@ -20,25 +20,26 @@ public class Paciente {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@Column
+	@Column(name="nombrePaciente")
 	private String nombre;
 	
-	@Column
+	@Column(name="primerApellidoPaciente")
 	private String primerApellido;
 	
-	@Column
+	@Column(name="segundoApellidoPaciente")
 	private String segundoApellido;
 	
-	@Column
+	@Column(name="emailPaciente")
 	private String email;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fechaNacimientoPaciente")
 	private Date fechaNacimiento;
 	
-	@Column
+	@Column(name="pacienteDNI")
 	private String DNI;
 	
-	@Column
+	@Column(name="direccionPaciente")
 	private String direccion;
 	
 	public Paciente() {
