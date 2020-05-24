@@ -19,7 +19,7 @@ public class CitaDAO
 		entity.getTransaction().begin();
 		entity.persist(cita);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
 	//Editar cita
@@ -28,7 +28,7 @@ public class CitaDAO
 		entity.getTransaction().begin();
 		entity.merge(cita);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
 	//Buscar cita

@@ -17,107 +17,90 @@ public class Doctor{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="idDoctor")
 	private int idDoctor;
 	
-	@Column(name="nombreDoctor")
-	private String nombre;
+	@Column
+	private String nombreDoctor;
 	
-	@Column(name="primerApellidoDoctor")
-	private String primerApellido;
+	@Column
+	private String primerApellidoDoctor;
 	
-	@Column(name="segundoApellidoDoctor")
-	private String segundoApellido;
+	@Column
+	private String segundoApellidoDoctor;
 	
-	@Column(name="emailDoctor")
-	private String email;
+	@Column
+	private String emailDoctor;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="fechaNacimientoDoctor")
-	private Date fechaNacimiento;
+	private Date fechaNacimientoDoctor;
 	
-	@Column(name="doctorDNI")
-	private String DNI;
+	@Column
+	private String doctorDNI;
 	
-	@Column(name="especialidadDoctor")
-	private String especialidad;
-	
-	public Doctor() {
-		
-	}
-	
-	public Doctor(int id, String nombre, String primerApellido, String segundoApellido, String email, Date fechaNacimiento, String DNI, String especialidad) {
-		this.setId(id);
-		this.setNombre(nombre);
-		this.setPrimerApellido(primerApellido);
-		this.setSegundoApellido(segundoApellido);
-		this.setEmail(email);
-		this.setFechaNacimiento(fechaNacimiento);
-		this.setDNI(DNI);
-		this.setEspecialidad(especialidad);
-	}
+	@Column
+	private String especialidadDoctor;
 
-	public int getId() {
+	public int getIdDoctor() {
 		return idDoctor;
 	}
 
-	public void setId(int idDoctor) {
+	public void setIdDoctor(int idDoctor) {
 		this.idDoctor = idDoctor;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreDoctor() {
+		return nombreDoctor;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreDoctor(String nombre) {
+		this.nombreDoctor = nombre;
 	}
 
-	public String getPrimerApellido() {
-		return primerApellido;
+	public String getPrimerApellidoDoctor() {
+		return primerApellidoDoctor;
 	}
 
-	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+	public void setPrimerApellidoDoctor(String primerApellido) {
+		this.primerApellidoDoctor = primerApellido;
 	}
 
-	public String getSegundoApellido() {
-		return segundoApellido;
+	public String getSegundoApellidoDoctor() {
+		return segundoApellidoDoctor;
 	}
 
-	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+	public void setSegundoApellidoDoctor(String segundoApellido) {
+		this.segundoApellidoDoctor = segundoApellido;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailDoctor() {
+		return emailDoctor;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailDoctor(String email) {
+		this.emailDoctor = email;
 	}
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public Date getFechaNacimientoDoctor() {
+		return fechaNacimientoDoctor;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFechaNacimientoDoctor(Date fechaNacimiento) {
+		this.fechaNacimientoDoctor = fechaNacimiento;
 	}
 
-	public String getDNI() {
-		return DNI;
+	public String getdoctorDNI() {
+		return doctorDNI;
 	}
 
-	public void setDNI(String dNI) {
-		DNI = dNI;
+	public void setdoctorDNI(String dNI) {
+		this.doctorDNI = dNI;
 	}
 
-	public String getEspecialidad() {
-		return especialidad;
+	public String getEspecialidadDoctor() {
+		return especialidadDoctor;
 	}
 
-	public void setEspecialidad(String especialidad) {
-		this.especialidad = especialidad;
+	public void setEspecialidadDoctor(String especialidad) {
+		this.especialidadDoctor = especialidad;
 	}
 }

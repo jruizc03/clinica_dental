@@ -7,42 +7,41 @@
 	<meta charset="utf-8" name="viewport"
 		content="width=device-width, initial-scale=1"
 		http-equiv="X-UA-Conpatible" />
-	
+	<title>Creacion nuevo doctor</title>
 </h:head>
 <h:body>
 	<h:form>
-		<p:panel styleclass="session" header="Nuevo Doctor">
-		<h:panelGrid columns="2" cellspacing="20">
+		<p:panelGrid columns="2" cellspacing="20" border="1">
 			<f:facet name="header">
-				<h:outputText value="Nuevo doctor"></h:outputText>
+				<h:outputText value="Nuevo Doctor"></h:outputText>
 			</f:facet>
 
-			<h:outputText value="Nombres"></h:outputText>
-			<p:inputText value="#{doctor.nombre}" required="true" requiredMessage="Campo requerido"></p:inputText>
+			<h:outputText value="Nombre"></h:outputText>
+			<p:inputText value="#{doctor.nombreDoctor}"></p:inputText>
 
-			<h:outputText value="Primer apellido"></h:outputText>
-			<p:inputText value="#{doctor.primerApellido}" required="true" requiredMessage="Campo requerido"></p:inputText>
+			<h:outputText value="Primer Apellido"></h:outputText>
+			<p:inputText value="#{doctor.primerApellidoDoctor}"></p:inputText>
 			
-			<h:outputText value="Segundo apellido"></h:outputText>
-			<p:inputText value="#{doctor.segundoApellido}" required="true" requiredMessage="Campo requerido"></p:inputText>
-			
+			<h:outputText value="Segundo Apellido"></h:outputText>
+			<p:inputText value="#{doctor.segundoApellidoDoctor}"></p:inputText>
+
 			<h:outputText value="Email"></h:outputText>
-			<p:inputText value="#{doctor.email}" required="true" requiredMessage="Campo requerido"></p:inputText>
+			<p:inputText value="#{doctor.emailDoctor}"></p:inputText>
 
-			<h:outputText value="Fecha de nacimiento"></h:outputText>
-			<p:inputText value="#{doctor.fechaNacimiento}" required="true" requiredMessage="Campo requerido"></p:inputText>
-
-			<h:outputText value="DNI"></h:outputText>
-			<p:inputText value="#{doctor.DNI}" required="true" requiredMessage="Campo requerido"></p:inputText>
-			
 			<h:outputText value="Especialidad"></h:outputText>
-			<p:inputText value="#{doctor.especialidad}" required="true" requiredMessage="Campo requerido"></p:inputText>
+			<p:inputText value="#{doctor.especialidadDoctor}"></p:inputText>
 			
+			<h:outputText value="DNI"></h:outputText>
+			<p:inputText value="#{doctor.doctorDNI}"></p:inputText>
+
 			<f:facet name="footer">
-				<p:commandButton immediate="true" action="#{doctorBean.guardar(doctor)}" value="Guardar"></p:commandButton>
+				<p:commandButton action="#{doctorBean.guardar(doctor)}"
+					value="Guardar"></p:commandButton>
 			</f:facet>
-		</h:panelGrid>
-		</p:panel>
+
+		</p:panelGrid>
+
 	</h:form>
+
 </h:body>
 </html>
