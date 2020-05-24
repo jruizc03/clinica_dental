@@ -54,7 +54,7 @@ public class DoctorBean {
 		System.out.println(d);
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-		sessionMap.put("cliente", d);
+		sessionMap.put("doctor", d);
 		return "/faces/editarDoctor.xhtml";
 	}
 
@@ -68,7 +68,7 @@ public class DoctorBean {
 	public String eliminar(int id) {
 		DoctorDAO doctorDAO = new DoctorDAO();
 		doctorDAO.eliminar(id);
-		System.out.println("Cliente eliminado..");
+		System.out.println("Doctor eliminado..");
 		return "/faces/index.xhtml";
 	}
 
