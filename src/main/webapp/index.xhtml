@@ -15,6 +15,9 @@
 	</h2>
 	<h:form>
 	<p:commandButton action="#{doctorBean.nuevo()}" value="Nuevo Doctor"></p:commandButton>
+	<p:commandButton action="#{doctorBean.ventanaAdmin()}" value="Ventana administrador"></p:commandButton>
+	<p:commandButton action="#{doctorBean.ventanaDoctor()}" value="Ventana doctor"></p:commandButton>
+	<p:commandButton action="#{doctorBean.ventanaAuxiliar()}" value="Ventana auxiliar"></p:commandButton>
 	
 		<p:dataTable value="#{doctorBean.obtenerDoctores()}" var="doctor"
 			border="1">

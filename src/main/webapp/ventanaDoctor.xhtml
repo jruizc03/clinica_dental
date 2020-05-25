@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Clinica dental</title>
+</h:head>
+<h:body>
+	<p:commandButton style="margin-bottom:50px; margin-right:100px;" value="Opciones" oncomplete="PF('sidebar1').show()" />
+	<p:outputLabel value="Bienvenido. Has iniciado sesión en calidad de doctor."></p:outputLabel>
+	<br /><br />
+ 	<p:outputLabel value="Elige una de las siguientes acciones:"></p:outputLabel>
+ 	<h:form style="margin-top:20px;"> 
+    	<p:growl id="growl" life="2000" />
+	    <p:commandButton  value = "Modificar pacientes" update="growl" style="margin-right:20px; margin-bottom: 20px;" />
+	    <p:commandButton  value = "Modificar citas" update="growl" style="margin-right:20px; margin-bottom: 20px;" /> 
+	</h:form>
+
+	<p:sidebar widgetVar="sidebar1" baseZIndex="10000">
+	    <h1 style="font-weight:normal">Opciones</h1>
+	    <p:commandButton value="Cerrar sesión"/>
+	    <br /><br />
+	    <p:commandButton value="Cancelar" oncomplete="PF('sidebar1').hide()"/>
+	</p:sidebar>
+</h:body>
+</html>

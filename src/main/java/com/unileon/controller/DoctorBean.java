@@ -23,6 +23,19 @@ public class DoctorBean {
 		return  "/faces/nuevoDoctor.xhtml";
 	}
 	
+	//Estos 3 metodos son para probar las ventanas. No deben estar aqui despues.
+	public String ventanaAdmin() {
+		return "/faces/ventanaAdministrador.xhtml";
+	}
+	
+	public String ventanaDoctor() {
+		return "/faces/ventanaDoctor.xhtml";
+	}
+	
+	public String ventanaAuxiliar() {
+		return "/faces/ventanaAuxiliar.xhtml";
+	}
+	
 	public String guardar (Doctor doctor) {		
 		DoctorDAO doctorDAO= new DoctorDAO();
 		doctorDAO.guardar(doctor);
