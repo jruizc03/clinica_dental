@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Clinica dental</title>
+</h:head>
+<h:body>
+	<h2>
+		<p:outputLabel value="Lista Doctores"></p:outputLabel>
+	</h2>
+	<h:form>
+	<p:commandButton action="#{doctorBean.nuevo()}" value="Nuevo Doctor"></p:commandButton>
+		<p:dataTable value="#{doctorBean.obtenerDoctores()}" var="doctor"
+			border="1">
+			<p:column>
+				<f:facet name="header">Id</f:facet>
+				<p:outputLabel value="#{doctor.idDoctor}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nombres</f:facet>
+				<p:outputLabel value="#{doctor.nombreDoctor}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Primer Apellido</f:facet>
+				<p:outputLabel value="#{doctor.primerApellidoDoctor}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Segundo Apellido</f:facet>
+				<p:outputLabel value="#{doctor.segundoApellidoDoctor}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Especialidad</f:facet>
+				<p:outputLabel value="#{doctor.especialidadDoctor}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<p:outputLabel value="#{doctor.emailDoctor}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">DNI</f:facet>
+				<p:outputLabel value="#{doctor.doctorDNI}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Editar</f:facet>
+				<p:commandButton action="#{doctorBean.editar(doctor.idDoctor)}" value="Editar"></p:commandButton>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<p:commandButton action="#{doctorBean.eliminar(doctor.idDoctor)}" value="Eliminar"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

@@ -1,7 +1,5 @@
 package com.unileon.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -39,24 +37,13 @@ public class DoctorBean {
 	public String guardar (Doctor doctor) {		
 		DoctorDAO doctorDAO= new DoctorDAO();
 		doctorDAO.guardar(doctor);
-		return  "/faces/index.xhtml";
+		return  "/faces/tablaDoctores.xhtml";
 	}
 
 	public List<Doctor> obtenerDoctores() {
-		DoctorDAO clienteDAO = new DoctorDAO();
+		DoctorDAO doctorDAO = new DoctorDAO();
 
-		/*
-		 * List<Cliente> listaClientes = new ArrayList<>(); Cliente c1 = new Cliente();
-		 * c1.setId(1L); c1.setNombres("Elivar"); c1.setApellidos("Largo");
-		 * c1.setDireccion("Loja");
-		 * 
-		 * Cliente c2 = new Cliente(); c2.setId(1L); c2.setNombres("Elivar1");
-		 * c2.setApellidos("Largo1"); c2.setDireccion("Loja1"); listaClientes.add(c1);
-		 * listaClientes.add(c2);
-		 * 
-		 * return listaClientes;
-		 */
-		return clienteDAO.obtenerDoctores();
+		return doctorDAO.obtenerDoctores();
 	}
 
 	public String editar(int id) {
@@ -74,7 +61,7 @@ public class DoctorBean {
 	public String actualizar(Doctor doctor) {		
 		DoctorDAO doctorDAO = new DoctorDAO();
 		doctorDAO.editar(doctor);
-		return "/faces/index.xhtml";
+		return "/faces/tablaDoctores.xhtml";
 	}
 
 	// eliminar un cliente
@@ -82,7 +69,11 @@ public class DoctorBean {
 		DoctorDAO doctorDAO = new DoctorDAO();
 		doctorDAO.eliminar(id);
 		System.out.println("Doctor eliminado..");
-		return "/faces/index.xhtml";
+		return "/faces/tablaDoctores.xhtml";
+	}
+	
+	public String mostrarPacientes() {
+		return "/faces/tablaPacientes.xhtml";
 	}
 
 }

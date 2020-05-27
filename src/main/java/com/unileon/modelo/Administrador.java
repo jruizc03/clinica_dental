@@ -19,93 +19,79 @@ public class Administrador {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idAdmin;
 	
-	@Column(name="nombreAdmin")
-	private String nombre;
+	@Column
+	private String nombreAdmin;
 	
-	@Column(name="primerApellidoAdmin")
-	private String primerApellido;
+	@Column
+	private String primerApellidoAdmin;
 	
-	@Column(name="segundoApellidoAdmin")
-	private String segundoApellido;
+	@Column
+	private String segundoApellidoAdmin;
 	
-	@Column(name="emailAdmin")
-	private String email;
+	@Column
+	private String emailAdmin;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="fechaNacimientoAdmin")
-	private Date fechaNacimiento;
+	private Date fechaNacimientoAdmin;
 	
-	@Column(name="AdminDNI")
-	private String DNI;
+	@Column
+	private String adminDNI;
 	
-	public Administrador() {
-		
-	}
-	
-	public Administrador(int id, String nombre, String primerApellido, String segundoApellido, String email, Date fechaNacimiento, String DNI) {
-		this.setId(id);
-		this.setNombre(nombre);
-		this.setPrimerApellido(primerApellido);
-		this.setSegundoApellido(segundoApellido);
-		this.setEmail(email);
-		this.setFechaNacimiento(fechaNacimiento);
-		this.setDNI(DNI);
-	}
 
-	public int getId() {
+	public int getIdAdmin() {
 		return idAdmin;
 	}
 
-	public void setId(int idAdmin) {
+	public void setIdAdmin(int idAdmin) {
 		this.idAdmin = idAdmin;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreAdmin() {
+		return nombreAdmin;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreAdmin(String nombreAdmin) {
+		this.nombreAdmin = nombreAdmin;
 	}
 
-	public String getPrimerApellido() {
-		return primerApellido;
+	public String getPrimerApellidoAdmin() {
+		return primerApellidoAdmin;
 	}
 
-	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+	public void setPrimerApellidoAdmin(String primerApellidoAdmin) {
+		this.primerApellidoAdmin = primerApellidoAdmin;
 	}
 
-	public String getSegundoApellido() {
-		return segundoApellido;
+	public String getSegundoApellidoAdmin() {
+		return segundoApellidoAdmin;
 	}
 
-	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+	public void setSegundoApellidoAdmin(String segundoApellidoAdmin) {
+		this.segundoApellidoAdmin = segundoApellidoAdmin;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailAdmin() {
+		return emailAdmin;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailAdmin(String emailAdmin) {
+		this.emailAdmin = emailAdmin;
 	}
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public Date getFechaNacimientoAdmin() {
+		return fechaNacimientoAdmin;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFechaNacimientoAdmin(Date fechaNacimientoAdmin) {
+		this.fechaNacimientoAdmin = fechaNacimientoAdmin;
 	}
 
-	public String getDNI() {
-		return DNI;
+	public String getAdminDNI() {
+		return adminDNI;
 	}
 
-	public void setDNI(String dNI) {
-		DNI = dNI;
+	public void setAdminDNI(String adminDNI) {
+		this.adminDNI = adminDNI;
 	}
 	
 	

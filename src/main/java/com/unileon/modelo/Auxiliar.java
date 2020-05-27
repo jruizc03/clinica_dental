@@ -19,93 +19,78 @@ public class Auxiliar {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idAuxiliar;
 	
-	@Column(name="nombreAuxiliar")
-	private String nombre;
+	@Column
+	private String nombreAuxiliar;
 	
-	@Column(name="primerApellidoAuxiliar")
-	private String primerApellido;
+	@Column
+	private String primerApellidoAuxiliar;
 	
-	@Column(name="segundoApellidoAuxiliar")
-	private String segundoApellido;
+	@Column
+	private String segundoApellidoAuxiliar;
 	
-	@Column(name="emailAuxiliar")
-	private String email;
+	@Column
+	private String emailAuxiliar;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="fechaNacimientoAuxiliar")
-	private Date fechaNacimiento;
+	private Date fechaNacimientoAuxiliar;
 	
-	@Column(name="AuxiliarDNI")
-	private String DNI;
-	
-	public Auxiliar() {
-		
-	}
-	
-	public Auxiliar(int id, String nombre, String primerApellido, String segundoApellido, String email, Date fechaNacimiento, String DNI) {
-		this.setId(id);
-		this.setNombre(nombre);
-		this.setPrimerApellido(primerApellido);
-		this.setSegundoApellido(segundoApellido);
-		this.setEmail(email);
-		this.setFechaNacimiento(fechaNacimiento);
-		this.setDNI(DNI);
-	}
+	@Column
+	private String auxiliarDNI;
 
-	public int getId() {
+	public int getIdAuxiliar() {
 		return idAuxiliar;
 	}
 
-	public void setId(int idAuxiliar) {
+	public void setIdAuxiliar(int idAuxiliar) {
 		this.idAuxiliar = idAuxiliar;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreAuxiliar() {
+		return nombreAuxiliar;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreAuxiliar(String nombre) {
+		this.nombreAuxiliar = nombre;
 	}
 
-	public String getPrimerApellido() {
-		return primerApellido;
+	public String getPrimerApellidoAuxiliar() {
+		return primerApellidoAuxiliar;
 	}
 
-	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+	public void setPrimerApellidoAuxiliar(String primerApellido) {
+		this.primerApellidoAuxiliar = primerApellido;
 	}
 
-	public String getSegundoApellido() {
-		return segundoApellido;
+	public String getSegundoApellidoAuxiliar() {
+		return segundoApellidoAuxiliar;
 	}
 
-	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+	public void setSegundoApellidoAuxiliar(String segundoApellido) {
+		this.segundoApellidoAuxiliar = segundoApellido;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailAuxiliar() {
+		return emailAuxiliar;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailAuxiliar(String email) {
+		this.emailAuxiliar = email;
 	}
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public Date getFechaNacimientoAuxiliar() {
+		return fechaNacimientoAuxiliar;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFechaNacimientoAuxiliar(Date fechaNacimiento) {
+		this.fechaNacimientoAuxiliar = fechaNacimiento;
 	}
 
-	public String getDNI() {
-		return DNI;
+	public String getAuxiliarDNI() {
+		return auxiliarDNI;
 	}
 
-	public void setDNI(String dNI) {
-		DNI = dNI;
+	public void setAuxiliarDNI(String DNI) {
+		this.auxiliarDNI = DNI;
 	}
 	
 	

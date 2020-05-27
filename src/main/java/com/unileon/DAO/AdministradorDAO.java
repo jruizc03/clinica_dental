@@ -12,32 +12,41 @@ import com.unileon.modelo.JPAUtil;
 public class AdministradorDAO {
 	EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 	
-	//Guardar administrador
-	public void guardar(Administrador administrador) {
+	//Guardar doctor
+	public void guardar(Administrador admin) {
 		entity.getTransaction().begin();
-		entity.persist(administrador);
+		entity.persist(admin);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//editar administrador
-	public void editar(Administrador administrador) {
+	//editar doctor
+	public void editar(Administrador admin) {
 		entity.getTransaction().begin();
-		entity.merge(administrador);
+		entity.merge(admin);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//buscar cliente
+	//buscar doctor
 	public Administrador buscar(int id) {
 		Administrador a = new Administrador();
 		a = entity.find(Administrador.class, id);
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 		return a;
 	}
 	
-	//obtener todos los administradores
-	public List<Administrador> obtenerAdmins(){
+	//eliminar doctor
+	public void eliminar(int id) {
+		Administrador a = new Administrador();
+		a = entity.find(Administrador.class, id);
+		entity.getTransaction().begin();
+		entity.remove(a);
+		entity.getTransaction().commit();
+	}
+	
+	//obtener todos los doctores
+	public List<Administrador> obtenerAdministradores(){
 		List<Administrador> listaAdmins = new ArrayList<>();
 		Query q = entity.createQuery("SELECT a FROM Administrador a");
 		listaAdmins = q.getResultList();

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Clinica dental</title>
+</h:head>
+<h:body>
+	<h2>
+		<p:outputLabel value="Lista de auxiliares"></p:outputLabel>
+	</h2>
+	<h:form>
+	<p:commandButton action="#{auxiliarBean.nuevo()}" value="Nuevo Auxiliar"></p:commandButton>
+		<p:dataTable value="#{auxiliarBean.obtenerAuxiliares()}" var="auxiliar"
+			border="1">
+			<p:column>
+				<f:facet name="header">Id</f:facet>
+				<p:outputLabel value="#{auxiliar.idAuxiliar}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nombres</f:facet>
+				<p:outputLabel value="#{auxiliar.nombreAuxiliar}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Primer Apellido</f:facet>
+				<p:outputLabel value="#{auxiliar.primerApellidoAuxiliar}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Segundo Apellido</f:facet>
+				<p:outputLabel value="#{auxiliar.segundoApellidoAuxiliar}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<p:outputLabel value="#{auxiliar.emailAuxiliar}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">DNI</f:facet>
+				<p:outputLabel value="#{auxiliar.auxiliarDNI}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Editar</f:facet>
+				<p:commandButton action="#{auxiliarBean.editar(auxiliar.idAuxiliar)}" value="Editar"></p:commandButton>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<p:commandButton action="#{auxiliarBean.eliminar(auxiliar.idAuxiliar)}" value="Eliminar"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

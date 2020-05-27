@@ -9,43 +9,47 @@ import javax.persistence.Query;
 import com.unileon.modelo.Inventario;
 import com.unileon.modelo.JPAUtil;
 
-public class InventarioDAO
-{
+public class InventarioDAO {
 	EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 	
-	//Guardar inventario
-	public void guardarInventario(Inventario inv)
-	{
+	//Guardar doctor
+	public void guardar(Inventario inventario) {
 		entity.getTransaction().begin();
-		entity.persist(inv);
+		entity.persist(inventario);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//Editar invetario
-	public void editarInventario(Inventario inv)
-	{
+	//editar doctor
+	public void editar(Inventario inventario) {
 		entity.getTransaction().begin();
-		entity.merge(inv);
+		entity.merge(inventario);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//Buscar inventario
-	public Inventario buscarHerramienta(int id)
-	{
-		Inventario inv = new Inventario();
-		inv = entity.find(Inventario.class, id);
-		JPAUtil.shutdown();
-		return inv;
+	//buscar doctor
+	public Inventario buscar(int id) {
+		Inventario i = new Inventario();
+		i = entity.find(Inventario.class, id);
+		//JPAUtil.shutdown();
+		return i;
 	}
 	
-	//Obtener el inventario
-	public List<Inventario> obtenerHerramienta()
-	{
-		List<Inventario> listaHerramientas = new ArrayList<>();
-		Query query = entity.createQuery("SELECT h FROM Inventario h");
-		listaHerramientas = query.getResultList();
-		return listaHerramientas;
+	//eliminar doctor
+	public void eliminar(int id) {
+		Inventario i = new Inventario();
+		i = entity.find(Inventario.class, id);
+		entity.getTransaction().begin();
+		entity.remove(i);
+		entity.getTransaction().commit();
+	}
+	
+	//obtener todos los doctores
+	public List<Inventario> obtenerInventario(){
+		List<Inventario> listaInventario = new ArrayList<>();
+		Query q = entity.createQuery("SELECT i FROM Inventario i");
+		listaInventario = q.getResultList();
+		return listaInventario;
 	}
 }

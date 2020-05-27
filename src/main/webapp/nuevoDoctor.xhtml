@@ -13,25 +13,25 @@
 	<h:form>
 		<p:panelGrid columns="2" cellspacing="20" border="1">
 			<f:facet name="header">
-				<h:outputText value="Nuevo Doctor"></h:outputText>
+				<p:outputLabel value="Nuevo Doctor"></p:outputLabel>
 			</f:facet>
 
-			<h:outputText value="Nombre"></h:outputText>
+			<p:outputLabel value="Nombre"></p:outputLabel>
 			<p:inputText value="#{doctor.nombreDoctor}"></p:inputText>
 
-			<h:outputText value="Primer Apellido"></h:outputText>
+			<p:outputLabel value="Primer Apellido"></p:outputLabel>
 			<p:inputText value="#{doctor.primerApellidoDoctor}"></p:inputText>
 			
-			<h:outputText value="Segundo Apellido"></h:outputText>
+			<p:outputLabel value="Segundo Apellido"></p:outputLabel>
 			<p:inputText value="#{doctor.segundoApellidoDoctor}"></p:inputText>
 
-			<h:outputText value="Email"></h:outputText>
+			<p:outputLabel value="Email"></p:outputLabel>
 			<p:inputText value="#{doctor.emailDoctor}"></p:inputText>
 
-			<h:outputText value="Especialidad"></h:outputText>
+			<p:outputLabel value="Especialidad"></p:outputLabel>
 			<p:inputText value="#{doctor.especialidadDoctor}"></p:inputText>
 			
-			<h:outputText value="DNI"></h:outputText>
+			<p:outputLabel value="DNI"></p:outputLabel>
 			<p:inputText value="#{doctor.doctorDNI}"></p:inputText>
 
 			<f:facet name="footer">

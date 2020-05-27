@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Editar un administrador</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<p:panelGrid columns="2" cellspacing="20" border="1">
+			<f:facet name="header">
+				<h:outputLabel value="Editar Administradores"></h:outputLabel>
+			</f:facet>
+
+			<h:outputLabel value="Nombre"></h:outputLabel>
+			<p:inputText value="#{administrador.nombreAdmin}"></p:inputText>
+
+			<h:outputLabel value="Primer Apellido"></h:outputLabel>
+			<p:inputText value="#{administrador.primerApellidoAdmin}"></p:inputText>
+			
+			<h:outputLabel value="Segundo Apellido"></h:outputLabel>
+			<p:inputText value="#{administrador.segundoApellidoAdmin}"></p:inputText>
+
+			<h:outputLabel value="Email"></h:outputLabel>
+			<p:inputText value="#{administrador.emailAdmin}"></p:inputText>
+			
+			<p:outputLabel value="DNI"></p:outputLabel>
+			<p:inputText value="#{doctor.doctorDNI}"></p:inputText>
+
+			<f:facet name="footer">
+				<p:commandButton action="#{administradorBean.actualizar(administrador)}" value="Actualizar"></p:commandButton>
+			</f:facet>
+			
+		</p:panelGrid>
+
+	</h:form>
+
+</h:body>
+</html>

@@ -11,53 +11,12 @@
 </h:head>
 <h:body>
 	<h2>
-		<h:outputText value="Lista Doctores"></h:outputText>
+		<p:outputLabel value="Bienvenido"></p:outputLabel>
 	</h2>
 	<h:form>
-	<p:commandButton action="#{doctorBean.nuevo()}" value="Nuevo Doctor"></p:commandButton>
-	<p:commandButton action="#{doctorBean.ventanaAdmin()}" value="Ventana administrador"></p:commandButton>
-	<p:commandButton action="#{doctorBean.ventanaDoctor()}" value="Ventana doctor"></p:commandButton>
-	<p:commandButton action="#{doctorBean.ventanaAuxiliar()}" value="Ventana auxiliar"></p:commandButton>
-	
-		<p:dataTable value="#{doctorBean.obtenerDoctores()}" var="doctor"
-			border="1">
-			<p:column>
-				<f:facet name="header">Id</f:facet>
-				<h:outputText value="#{doctor.idDoctor}"></h:outputText>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Nombres</f:facet>
-				<h:outputText value="#{doctor.nombreDoctor}"></h:outputText>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Primer Apellido</f:facet>
-				<h:outputText value="#{doctor.primerApellidoDoctor}"></h:outputText>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Segundo Apellido</f:facet>
-				<h:outputText value="#{doctor.segundoApellidoDoctor}"></h:outputText>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Especialidad</f:facet>
-				<h:outputText value="#{doctor.especialidadDoctor}"></h:outputText>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Email</f:facet>
-				<h:outputText value="#{doctor.emailDoctor}"></h:outputText>
-			</p:column>
-			<p:column>
-				<f:facet name="header">DNI</f:facet>
-				<h:outputText value="#{doctor.doctorDNI}"></h:outputText>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Editar</f:facet>
-				<p:commandButton action="#{doctorBean.editar(doctor.idDoctor)}" value="Editar"></p:commandButton>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton action="#{doctorBean.eliminar(doctor.idDoctor)}" value="Eliminar"></p:commandButton>
-			</p:column>
-		</p:dataTable>
+		<p:commandButton action="#{doctorBean.ventanaAdmin()}" value="Ventana administrador"></p:commandButton>
+		<p:commandButton action="#{doctorBean.ventanaDoctor()}" value="Ventana doctor"></p:commandButton>
+		<p:commandButton action="#{doctorBean.ventanaAuxiliar()}" value="Ventana auxiliar"></p:commandButton>
 	</h:form>
 </h:body>
 </html>

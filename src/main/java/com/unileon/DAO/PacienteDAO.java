@@ -9,43 +9,47 @@ import javax.persistence.Query;
 import com.unileon.modelo.Paciente;
 import com.unileon.modelo.JPAUtil;
 
-public class PacienteDAO
-{
+public class PacienteDAO {
 	EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
-		
-		//Guardar paciente
-		public void guardarPaciente(Paciente pac)
-		{
-			entity.getTransaction().begin();
-			entity.persist(pac);
-			entity.getTransaction().commit();
-			JPAUtil.shutdown();
-		}
-		
-		//Editar paciente
-		public void editarPaciente(Paciente pac)
-		{
-			entity.getTransaction().begin();
-			entity.merge(pac);
-			entity.getTransaction().commit();
-			JPAUtil.shutdown();
-		}
-		
-		//Buscar paciente
-		public Paciente buscar(int id)
-		{
-			Paciente pac = new Paciente();
-			pac = entity.find(Paciente.class, id);
-			JPAUtil.shutdown();
-			return pac;
-		}
-		
-		//Obtener todos los pacientes
-		public List<Paciente> obtenerPacientes()
-		{
-			List<Paciente> listaPacientes = new ArrayList<>();
-			Query query = entity.createQuery("SELECT p FROM Paciente p");
-			listaPacientes = query.getResultList();
-			return listaPacientes;
-		}
+	
+	//Guardar doctor
+	public void guardar(Paciente paciente) {
+		entity.getTransaction().begin();
+		entity.persist(paciente);
+		entity.getTransaction().commit();
+		//JPAUtil.shutdown();
+	}
+	
+	//editar doctor
+	public void editar(Paciente paciente) {
+		entity.getTransaction().begin();
+		entity.merge(paciente);
+		entity.getTransaction().commit();
+		//JPAUtil.shutdown();
+	}
+	
+	//buscar doctor
+	public Paciente buscar(int id) {
+		Paciente p = new Paciente();
+		p = entity.find(Paciente.class, id);
+		//JPAUtil.shutdown();
+		return p;
+	}
+	
+	//eliminar doctor
+	public void eliminar(int id) {
+		Paciente p = new Paciente();
+		p = entity.find(Paciente.class, id);
+		entity.getTransaction().begin();
+		entity.remove(p);
+		entity.getTransaction().commit();
+	}
+	
+	//obtener todos los doctores
+	public List<Paciente> obtenerPacientes(){
+		List<Paciente> listaPacientes = new ArrayList<>();
+		Query q = entity.createQuery("SELECT p FROM Paciente p");
+		listaPacientes = q.getResultList();
+		return listaPacientes;
+	}
 }

@@ -3,41 +3,78 @@ package com.unileon.controller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
+import com.unileon.DAO.AdministradorDAO;
 import com.unileon.modelo.Administrador;
 
-@ManagedBean(name="administradorBean")
+@ManagedBean(name = "administradorBean")
 @RequestScoped
 public class AdministradorBean {
 	
-	public List<Administrador> obtenerAdmins(){
-		List<Administrador> listaAdmins = new ArrayList<>();
-		
-		Administrador a1 = new Administrador();
-		Administrador a2 = new Administrador();
-		a1.setId(1);
-		a1.setNombre("Adrián");
-		a1.setPrimerApellido("Prieto");
-		a1.setSegundoApellido("González");
-		a1.setEmail("aprieg04");
-		Date fecha1 = new Date(1998, 12, 13);
-		a1.setFechaNacimiento(fecha1);
-		a1.setDNI("71798425I");
-		
-		a2.setId(2);
-		a2.setNombre("Julio César");
-		a2.setPrimerApellido("Ruiz");
-		a2.setSegundoApellido("Calle");
-		a2.setEmail("jruizc03");
-		Date fecha2 = new Date(1998, 1, 19);
-		a2.setFechaNacimiento(fecha2);
-		a2.setDNI("71746035L");
-		
-		listaAdmins.add(a1);
-		listaAdmins.add(a2);
-		return listaAdmins; 
+	public String nuevo() {
+		Administrador a = new Administrador();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("administrador", a);
+		return  "/faces/nuevoAdministrador.xhtml";
 	}
+		
+	public String guardar (Administrador administrador) {		
+		AdministradorDAO adminDAO= new AdministradorDAO();
+		adminDAO.guardar(administrador);
+		return  "/faces/index.xhtml";
+	}
+
+	public List<Administrador> obtenerAdministradores() {
+		AdministradorDAO adminDAO = new AdministradorDAO();
+
+		return adminDAO.obtenerAdministradores();
+	}
+
+	public String editar(int id) {
+		AdministradorDAO adminDAO = new AdministradorDAO();
+		Administrador a = new Administrador();
+		a = adminDAO.buscar(id);
+		System.out.println("******************************************");
+		System.out.println(a);
+
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("administrador", a);
+		return "/faces/editarAdministrador.xhtml";
+	}
+
+	public String actualizar(Administrador admin) {		
+		AdministradorDAO adminDAO = new AdministradorDAO();
+		adminDAO.editar(admin);
+		return "/faces/index.xhtml";
+	}
+
+	// eliminar un cliente
+	public String eliminar(int id) {
+		AdministradorDAO adminDAO = new AdministradorDAO();
+		adminDAO.eliminar(id);
+		System.out.println("Administrador eliminado..");
+		return "/faces/index.xhtml";
+	}
+	
+	public String mostrarDoctores() {
+		return "/faces/tablaDoctores.xhtml";
+	}
+	
+	public String mostrarAuxiliares() {
+		return "/faces/tablaAuxiliares.xhtml";
+	}
+	
+	public String mostrarPacientes() {
+		return "/faces/tablaPacientes.xhtml";
+	}
+	
+	public String mostrarInventario() {
+		return "/faces/tablaInventario.xhtml";
+	}
+
 }

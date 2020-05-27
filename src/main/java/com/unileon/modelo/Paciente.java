@@ -16,108 +16,91 @@ import javax.persistence.TemporalType;
 public class Paciente {
 	
 	@Id
-	@Column(name="idPaciente")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int idPaciente;
 	
-	@Column(name="nombrePaciente")
-	private String nombre;
+	@Column
+	private String nombrePaciente;
 	
-	@Column(name="primerApellidoPaciente")
-	private String primerApellido;
+	@Column
+	private String primerApellidoPaciente;
 	
-	@Column(name="segundoApellidoPaciente")
-	private String segundoApellido;
+	@Column
+	private String segundoApellidoPaciente;
 	
-	@Column(name="emailPaciente")
-	private String email;
+	@Column
+	private String emailPaciente;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="fechaNacimientoPaciente")
-	private Date fechaNacimiento;
+	private Date fechaNacimientoPaciente;
 	
-	@Column(name="pacienteDNI")
-	private String DNI;
+	@Column
+	private String pacienteDNI;
 	
-	@Column(name="direccionPaciente")
-	private String direccion;
+	@Column
+	private String direccionPaciente;
 	
-	public Paciente() {
-		
-	}
-	
-	public Paciente(int id, String nombre, String primerApellido, String segundoApellido, String email, Date fechaNacimiento, String DNI, String direccion) {
-		this.setId(id);
-		this.setNombre(nombre);
-		this.setPrimerApellido(primerApellido);
-		this.setSegundoApellido(segundoApellido);
-		this.setEmail(email);
-		this.setFechaNacimiento(fechaNacimiento);
-		this.setDNI(DNI);
-		this.setDireccion(direccion);
+	public int getIdPaciente() {
+		return idPaciente;
 	}
 
-	public int getId() {
-		return id;
+	public void setIdPaciente(int id) {
+		this.idPaciente = id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getNombrePaciente() {
+		return nombrePaciente;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public void setNombrePaciente(String nombre) {
+		this.nombrePaciente = nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public String getPrimerApellidoPaciente() {
+		return primerApellidoPaciente;
 	}
 
-	public String getPrimerApellido() {
-		return primerApellido;
+	public void setPrimerApellidoPaciente(String primerApellido) {
+		this.primerApellidoPaciente = primerApellido;
 	}
 
-	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+	public String getSegundoApellidoPaciente() {
+		return segundoApellidoPaciente;
 	}
 
-	public String getSegundoApellido() {
-		return segundoApellido;
+	public void setSegundoApellidoPaciente(String segundoApellido) {
+		this.segundoApellidoPaciente = segundoApellido;
 	}
 
-	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+	public String getEmailPaciente() {
+		return emailPaciente;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setEmailPaciente(String email) {
+		this.emailPaciente = email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public Date getFechaNacimientoPaciente() {
+		return fechaNacimientoPaciente;
 	}
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public void setFechaNacimientoPaciente(Date fechaNacimiento) {
+		this.fechaNacimientoPaciente = fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public String getPacienteDNI() {
+		return pacienteDNI;
 	}
 
-	public String getDNI() {
-		return DNI;
+	public void setPacienteDNI(String DNI) {
+		pacienteDNI = DNI;
 	}
 
-	public void setDNI(String dNI) {
-		DNI = dNI;
+	public String getDireccionPaciente() {
+		return direccionPaciente;
 	}
 
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setDireccionPaciente(String direccion) {
+		this.direccionPaciente = direccion;
 	}
 }

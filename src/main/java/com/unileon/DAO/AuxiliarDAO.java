@@ -12,31 +12,40 @@ import com.unileon.modelo.JPAUtil;
 public class AuxiliarDAO {
 	EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 	
-	//Guardar auxiliar
+	//Guardar doctor
 	public void guardar(Auxiliar auxiliar) {
 		entity.getTransaction().begin();
 		entity.persist(auxiliar);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//editar auxiliar
-	public void editar(Auxiliar administrador) {
+	//editar doctor
+	public void editar(Auxiliar auxiliar) {
 		entity.getTransaction().begin();
-		entity.merge(administrador);
+		entity.merge(auxiliar);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//buscar auxiliar
+	//buscar doctor
 	public Auxiliar buscar(int id) {
 		Auxiliar a = new Auxiliar();
 		a = entity.find(Auxiliar.class, id);
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 		return a;
 	}
 	
-	//obtener todos los auxiliares
+	//eliminar doctor
+	public void eliminar(int id) {
+		Auxiliar a = new Auxiliar();
+		a = entity.find(Auxiliar.class, id);
+		entity.getTransaction().begin();
+		entity.remove(a);
+		entity.getTransaction().commit();
+	}
+	
+	//obtener todos los doctores
 	public List<Auxiliar> obtenerAuxiliares(){
 		List<Auxiliar> listaAuxiliares = new ArrayList<>();
 		Query q = entity.createQuery("SELECT a FROM Auxiliar a");

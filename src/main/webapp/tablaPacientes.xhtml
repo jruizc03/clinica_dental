@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Clinica dental</title>
+</h:head>
+<h:body>
+	<h2>
+		<p:outputLabel value="Lista de pacientes"></p:outputLabel>
+	</h2>
+	<h:form>
+	<p:commandButton action="#{pacienteBean.nuevo()}" value="Nuevo Paciente"></p:commandButton>
+		<p:dataTable value="#{pacienteBean.obtenerPacientes()}" var="paciente"
+			border="1">
+			<p:column>
+				<f:facet name="header">Id</f:facet>
+				<p:outputLabel value="#{paciente.idPaciente}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nombres</f:facet>
+				<p:outputLabel value="#{paciente.nombrePaciente}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Primer Apellido</f:facet>
+				<p:outputLabel value="#{paciente.primerApellidoPaciente}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Segundo Apellido</f:facet>
+				<p:outputLabel value="#{paciente.segundoApellidoPaciente}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Direccion</f:facet>
+				<p:outputLabel value="#{paciente.direccionPaciente}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Email</f:facet>
+				<p:outputLabel value="#{paciente.emailPaciente}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">DNI</f:facet>
+				<p:outputLabel value="#{paciente.pacienteDNI}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Editar</f:facet>
+				<p:commandButton action="#{pacienteBean.editar(paciente.idPaciente)}" value="Editar"></p:commandButton>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<p:commandButton action="#{pacienteBean.eliminar(paciente.idPaciente)}" value="Eliminar"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

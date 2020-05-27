@@ -12,30 +12,21 @@ import javax.persistence.Table;
 public class Inventario {
 	
 	@Id
-	@Column(name="idInstrumento")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int idInstrumento;
 	
-	@Column(name="existencias")
+	@Column
 	private int existencias;
 	
-	@Column(name="nombreInstrumento")
+	@Column
 	private String nombreInstrumento;
-	
-	public Inventario() {
-		
-	}
-	
-	public Inventario(int id, int existencias, String nombreInstrumento) {
-		
+
+	public int getIdInstrumento() {
+		return idInstrumento;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setIdInstrumento(int id) {
+		this.idInstrumento = id;
 	}
 
 	public int getExistencias() {
