@@ -52,4 +52,9 @@ public class DoctorDAO {
 		listaDoctores = q.getResultList();
 		return listaDoctores;
 	}
+	
+	public boolean loginDoctor(String nombre, String password)
+	{
+		return true;
+	}
 }

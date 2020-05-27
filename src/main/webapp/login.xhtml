@@ -11,16 +11,26 @@
 	<h:body>
 		<h:form>
 			<p:panel styleclass="session" header="Iniciar sesión">
-			<h:panelGrid columns="3">
-				<h:outputLabel value="Usuario"/>
-					<p:inputText id="user" required="true" requiredMessage="Campo requerido"></p:inputText>
-					<p:message for="user" />
-					<h:outputLabel value="Contraseña"/>
-					<p:inputSecret id="password" required="true" requiredMessage="Campo requerido"></p:inputSecret>
-					<p:message for="password" />
-			</h:panelGrid>
-				<!-- Cambiar action por el nombre de la funcion del login -->
-				<h:commandButton value="Entrar" action="#" align="center"/>
+			<h:outputLabel value="Tipo de login"></h:outputLabel>
+			<h:selectOneRadio id="rol" required="true" requiredMessage="Campo requerido">
+					<f:selectItem itemLabel="Administrador"></f:selectItem>
+					<f:selectItem itemLabel="Doctor"></f:selectItem>
+					<f:selectItem itemLabel="Auxiliar"></f:selectItem>
+					<p:message for="rol"></p:message>
+					</h:selectOneRadio>
+						
+				<h:panelGrid columns="3">			
+				<h:outputLabel value=" Usuario " />
+								<p:inputText id="nombre" required="true" requiredMessage="Campo requerido" value="#{login.nombre}"></p:inputText>
+								<p:message for="nombre"></p:message>
+								<h:outputLabel value="Contraseña" />
+								<p:password id="password" required="true" requiredMessage="Campo requerido" value="#{login.password}"></p:password>
+								<p:message for="password"></p:message>
+
+						<f:facet name="footer">
+							<p:commandButton value="Entrar" action="#{loginBean.loginControl(login)}"></p:commandButton>
+						</f:facet>
+				</h:panelGrid>
 			</p:panel>
 		</h:form>
 	</h:body>

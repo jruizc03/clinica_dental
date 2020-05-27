@@ -52,4 +52,9 @@ public class AuxiliarDAO {
 		listaAuxiliares = q.getResultList();
 		return listaAuxiliares;
 	}
+	
+	public boolean auxiliarLogin(String nombre, String password)
+	{
+		return true;
+	}
 }

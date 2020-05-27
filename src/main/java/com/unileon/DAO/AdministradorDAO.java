@@ -52,4 +52,9 @@ public class AdministradorDAO {
 		listaAdmins = q.getResultList();
 		return listaAdmins;
 	}
+	
+	public boolean administradorLogin(String nombre, String password)
+	{
+		return true;
+	}
 }
