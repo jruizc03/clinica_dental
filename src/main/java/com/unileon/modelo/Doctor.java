@@ -39,6 +39,9 @@ public class Doctor{
 	
 	@Column
 	private String especialidadDoctor;
+	
+	@Column
+	private String password;
 
 	public int getIdDoctor() {
 		return idDoctor;
@@ -102,5 +105,13 @@ public class Doctor{
 
 	public void setEspecialidadDoctor(String especialidad) {
 		this.especialidadDoctor = especialidad;
+	}
+	
+	public String getPassword(){
+		return this.password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

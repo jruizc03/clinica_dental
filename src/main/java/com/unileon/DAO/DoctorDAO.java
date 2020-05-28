@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import com.unileon.modelo.Administrador;
 import com.unileon.modelo.Doctor;
 import com.unileon.modelo.JPAUtil;
 
@@ -53,8 +54,13 @@ public class DoctorDAO {
 		return listaDoctores;
 	}
 	
-	public boolean loginDoctor(String nombre, String password)
+	public Doctor doctorLogin(String nombre)
 	{
-		return true;
+		Query q = entity.createQuery("SELECT d FROM Doctor d WHERE d.doctorDNI = :nombre");
+		q.setParameter("nombre", nombre);
+		List<Doctor> lista = q.getResultList();
+		if(!lista.isEmpty())
+			return lista.get(0);
+		return null;
 	}
 }

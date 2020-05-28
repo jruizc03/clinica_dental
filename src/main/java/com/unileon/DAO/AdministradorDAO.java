@@ -53,8 +53,14 @@ public class AdministradorDAO {
 		return listaAdmins;
 	}
 	
-	public boolean administradorLogin(String nombre, String password)
+	public Administrador adminLogin(String nombre)
 	{
-		return true;
+		Query q = entity.createQuery("SELECT a FROM Administrador a WHERE a.adminDNI = :nombre");
+		q.setParameter("nombre", nombre);
+		List<Administrador> lista = q.getResultList();
+		if(!lista.isEmpty())
+			return lista.get(0);
+		return null;
+		
 	}
 }

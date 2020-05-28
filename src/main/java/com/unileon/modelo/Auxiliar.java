@@ -36,6 +36,9 @@ public class Auxiliar {
 	
 	@Column
 	private String auxiliarDNI;
+	
+	@Column
+	private String password;
 
 	public int getIdAuxiliar() {
 		return idAuxiliar;
@@ -93,5 +96,12 @@ public class Auxiliar {
 		this.auxiliarDNI = DNI;
 	}
 	
+	public String getPassword(){
+		return this.password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import com.unileon.modelo.Administrador;
 import com.unileon.modelo.Auxiliar;
 import com.unileon.modelo.JPAUtil;
 
@@ -53,8 +54,13 @@ public class AuxiliarDAO {
 		return listaAuxiliares;
 	}
 	
-	public boolean auxiliarLogin(String nombre, String password)
+	public Auxiliar auxiliarLogin(String nombre)
 	{
-		return true;
+		Query q = entity.createQuery("SELECT a FROM Auxiliar a WHERE a.auxiliarDNI = :nombre");
+		q.setParameter("nombre", nombre);
+		List<Auxiliar> lista = q.getResultList();
+		if(!lista.isEmpty())
+			return lista.get(0);
+		return null;
 	}
 }

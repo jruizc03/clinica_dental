@@ -37,6 +37,8 @@ public class Administrador {
 	@Column
 	private String adminDNI;
 	
+	@Column
+	private String password;
 
 	public int getIdAdmin() {
 		return idAdmin;
@@ -94,5 +96,12 @@ public class Administrador {
 		this.adminDNI = adminDNI;
 	}
 	
+	public String getPassword(){
+		return this.password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 }
