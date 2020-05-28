@@ -9,43 +9,47 @@ import javax.persistence.Query;
 import com.unileon.modelo.Historial;
 import com.unileon.modelo.JPAUtil;
 
-public class HistorialDAO
-{
+public class HistorialDAO {
 	EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 	
-	//Guardar historial
-	public void guardarHistorial(Historial hist)
-	{
+	//Guardar doctor
+	public void guardar(Historial historial) {
 		entity.getTransaction().begin();
-		entity.persist(hist);
+		entity.persist(historial);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//Editar historial
-	public void editarHistorial(Historial hist)
-	{
+	//editar doctor
+	public void editar(Historial historial) {
 		entity.getTransaction().begin();
-		entity.merge(hist);
+		entity.merge(historial);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	//Buscar historial
-	public Historial buscar(int id)
-	{
-		Historial hist = new Historial();
-		hist = entity.find(Historial.class, id);
-		JPAUtil.shutdown();
-		return hist;
+	//buscar doctor
+	public Historial buscar(int id) {
+		Historial h = new Historial();
+		h = entity.find(Historial.class, id);
+		//JPAUtil.shutdown();
+		return h;
 	}
 	
-	//Obtener todos los historiales
-	public List<Historial> obtenerHistoriales()
-	{
+	//eliminar doctor
+	public void eliminar(int id) {
+		Historial h = new Historial();
+		h = entity.find(Historial.class, id);
+		entity.getTransaction().begin();
+		entity.remove(h);
+		entity.getTransaction().commit();
+	}
+	
+	//obtener todos los doctores
+	public List<Historial> obtenerHistoriales(){
 		List<Historial> listaHistoriales = new ArrayList<>();
-		Query query = entity.createQuery("SELECT h FROM Historial h");
-		listaHistoriales = query.getResultList();
+		Query q = entity.createQuery("SELECT h FROM Historial h");
+		listaHistoriales = q.getResultList();
 		return listaHistoriales;
 	}
 }

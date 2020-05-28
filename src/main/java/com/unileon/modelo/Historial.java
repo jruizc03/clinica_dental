@@ -12,30 +12,21 @@ import javax.persistence.Table;
 public class Historial {
 	
 	@Id
-	@Column(name="idHistorial")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int idHistorial;
 	
-	@Column(name="dolencia")
+	@Column
 	private String dolencia;
 	
-	@Column(name="tratamiento")
+	@Column
 	private String tratamiento;
-	
-	public Historial() {
-		
-	}
-	
-	public Historial(int id, String dolencia, String tratamiento) {
-		
+
+	public int getIdHistorial() {
+		return idHistorial;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setIdHistorial(int id) {
+		this.idHistorial = id;
 	}
 
 	public String getDolencia() {
