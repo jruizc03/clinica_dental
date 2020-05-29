@@ -5,25 +5,27 @@
 	xmlns:p="http://primefaces.org/ui">
 	<h:head>
 	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />    
-	    <title>Login</title>
+	    <title>Login Clinica</title>
 	</h:head>
 	
 	<h:body>
 		<h:form>
-			<p:panel styleclass="session" header="Iniciar sesión">
-				<h:panelGrid columns="3">			
-				<h:outputLabel value=" Usuario (DNI)" />
-								<p:inputText id="nombre" required="true" requiredMessage="Campo requerido" value="#{loginBean.nombre}"></p:inputText>
-								<p:message for="nombre"></p:message>
-								<h:outputLabel value="Contraseña" />
-								<p:password id="password" required="true" requiredMessage="Campo requerido" value="#{loginBean.password}"></p:password>
-								<p:message for="password"></p:message>
-
-						<f:facet name="footer">
-							<p:commandButton value="Entrar" action="#{loginBean.loginControl}"></p:commandButton>
-						</f:facet>
-				</h:panelGrid>
-			</p:panel>
+			<p:growl id="growl" life="3000" />
+				<p:panel styleclass="session" header="Iniciar sesión">
+					<h:panelGrid columns="3" id="hlogin">			
+					<h:outputLabel value=" Usuario (DNI) *" />
+									<p:inputText id="nombre" required="true" requiredMessage="Campo requerido" value="#{loginBean.nombre}"></p:inputText>
+									<p:message for="nombre"></p:message>
+									<h:outputLabel value="Contraseña *" />
+									<p:password id="password" required="true" requiredMessage="Campo requerido" value="#{loginBean.password}"></p:password>
+									<p:message for="password"></p:message>
+	
+							<f:facet name="footer">
+								<p:commandButton value="Entrar" update="hlogin, growl" action="#{loginBean.loginControl}"></p:commandButton>
+							</f:facet>
+							
+					</h:panelGrid>
+				</p:panel>
 		</h:form>
 	</h:body>
 	

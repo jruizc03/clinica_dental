@@ -32,9 +32,9 @@ public class LoginBean implements Serializable
 	@EJB
 	private Auxiliar auxiliarAutenticado;
 	
-	private AdministradorDAO adminAutenticadoDAO;
-	private DoctorDAO doctorAutenticadoDAO;
-	private AuxiliarDAO auxiliarAutenticadoDAO;
+	private AdministradorDAO adminAutenticadoDAO = new AdministradorDAO();
+	private DoctorDAO doctorAutenticadoDAO = new DoctorDAO();
+	private AuxiliarDAO auxiliarAutenticadoDAO = new AuxiliarDAO();
 	
 	private String nombre;
 
@@ -75,11 +75,12 @@ public class LoginBean implements Serializable
 	
 	public String loginControl()
 	{
-		return "/faces/ventanaDoctor.xhtml";
-		/*adminAutenticado=adminAutenticadoDAO.adminLogin(nombre);
+
+		
+		adminAutenticado=adminAutenticadoDAO.adminLogin(nombre);
 		if(adminAutenticado!=null)
 		{
-			if(adminAutenticado.getPassword()==password)
+			if(adminAutenticado.getPassword().equals(password))
 				return "/faces/ventanaAdministrador.xhtml";
 			
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Password incorrecta para el admin", "Password incorrecta para el admin"));
@@ -88,7 +89,7 @@ public class LoginBean implements Serializable
 		doctorAutenticado=doctorAutenticadoDAO.doctorLogin(nombre);
 		if(doctorAutenticado!=null)
 		{
-			if(doctorAutenticado.getPassword()==password)
+			if(doctorAutenticado.getPassword().equals(password))
 				return "/faces/ventanaDoctor.xhtml";
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Password incorrecta para el doctor", "Password incorrecta para el doctor"));
 		}
@@ -96,13 +97,14 @@ public class LoginBean implements Serializable
 		auxiliarAutenticado=auxiliarAutenticadoDAO.auxiliarLogin(nombre);
 		if(auxiliarAutenticado!=null)
 		{
-			if(auxiliarAutenticado.getPassword()==password)
+			if(auxiliarAutenticado.getPassword().equals(password))
 				return "/faces/ventanaAuxiliar.xhtml";
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Password incorrecta para el auxiliar", "Password incorrecta para el auxiliar"));
+			FacesContext.getCurrentInstance().addMessage("Password", new FacesMessage(FacesMessage.SEVERITY_FATAL, "Password incorrecta para el auxiliar", "Password incorrecta para el auxiliar"));
 		}
 		
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "El usuario no existe", "El usuario no exite"));
-		return null;*/
+		return null;
 	}
+	
 
 }
