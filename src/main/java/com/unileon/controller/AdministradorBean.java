@@ -81,4 +81,13 @@ public class AdministradorBean {
 		return "/faces/tablaCitas.xhtml";
 	}
 
+	public String volverPrincipal()
+	{
+		return "/faces/ventanaAdministrador.xhtml";
+	}
+	
+	public String cerrarSesion()
+	{
+		return "/faces/login.xhtml";
+	}
 }

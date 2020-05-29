@@ -14,6 +14,8 @@
 		<p:outputLabel value="Lista del inventario"></p:outputLabel>
 	</h2>
 	<h:form>
+	<p:commandButton onclick="history.go(-1)" value="Volver"/>
+		<br></br>
 	<p:commandButton action="#{inventarioBean.nuevo()}" value="Nuevo Item"></p:commandButton>
 		<p:dataTable value="#{inventarioBean.obtenerInventario()}" var="inventario"
 			border="1">

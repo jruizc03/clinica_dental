@@ -14,6 +14,9 @@
 		<p:outputLabel value="Lista de auxiliares"></p:outputLabel>
 	</h2>
 	<h:form>
+	<p:commandButton onclick="history.go(-1)" value="Volver"/>
+		<br></br>
+	
 	<p:commandButton action="#{auxiliarBean.nuevo()}" value="Nuevo Auxiliar"></p:commandButton>
 		<p:dataTable value="#{auxiliarBean.obtenerAuxiliares()}" var="auxiliar"
 			border="1">

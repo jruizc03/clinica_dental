@@ -68,5 +68,15 @@ public class AuxiliarBean {
 	public String mostrarPacientes() {
 		return "/faces/tablaPacientesSoloEditar.xhtml";
 	}
+	
+	public String volverPrincipal()
+	{
+		return "/faces/ventanaAuxiliar.xhtml";
+	}
+	
+	public String cerrarSesion()
+	{
+		return "/faces/login.xhtml";
+	}
 
 }

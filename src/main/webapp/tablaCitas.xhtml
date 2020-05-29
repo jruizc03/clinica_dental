@@ -14,6 +14,9 @@
 		<p:outputLabel value="Lista de citas "></p:outputLabel>
 	</h2>
 	<h:form>
+	<p:commandButton onclick="history.go(-1)" value="Volver"/>
+		<br></br>
+		
 	<p:commandButton action="#{citaBean.nuevo()}" value="Nueva Cita"></p:commandButton>
 		<p:dataTable value="#{citaBean.obtenerCitas()}" var="cita"
 			border="1">

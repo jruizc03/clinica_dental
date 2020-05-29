@@ -108,5 +108,15 @@ public class DoctorBean {
 	public void setNombres(List<String> nombres) {
 		this.nombres = nombres;
 	}
+	
+	public String volverPrincipal()
+	{
+		return "/faces/ventanaDoctor.xhtml";
+	}
+	
+	public String cerrarSesion()
+	{
+		return "/faces/login.xhtml";
+	}
 
 }
