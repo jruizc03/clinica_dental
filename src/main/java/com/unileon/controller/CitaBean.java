@@ -50,6 +50,10 @@ public class CitaBean {
 	public String actualizar(Cita cita) {		
 		CitaDAO citaDAO = new CitaDAO();
 		citaDAO.editar(cita);
+		System.out.println("-------Cita:");
+		System.out.println("Doctor= " + cita.getDoctor().getNombreDoctor());
+		System.out.println("Paciente= " + cita.getPaciente().getNombrePaciente());
+		System.out.println("Tratamientox= " + cita.getHistorial().getTratamiento());
 		return "/faces/tablaCitas.xhtml";
 	}
 
