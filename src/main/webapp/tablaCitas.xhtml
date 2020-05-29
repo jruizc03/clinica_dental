@@ -42,7 +42,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton action="#{citaBean.eliminar(cita.idCita)}" value="Eliminar"></p:commandButton>
+				<p:commandButton update="@form" action="#{citaBean.eliminar(cita.idCita)}" value="Eliminar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

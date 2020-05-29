@@ -37,7 +37,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton action="#{inventarioBean.eliminar(inventario.idInstrumento)}" value="Eliminar"></p:commandButton>
+				<p:commandButton update="@form" action="#{inventarioBean.eliminar(inventario.idInstrumento)}" value="Eliminar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

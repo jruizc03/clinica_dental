@@ -50,7 +50,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton action="#{auxiliarBean.eliminar(auxiliar.idAuxiliar)}" value="Eliminar"></p:commandButton>
+				<p:commandButton update="@form" action="#{auxiliarBean.eliminar(auxiliar.idAuxiliar)}" value="Eliminar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

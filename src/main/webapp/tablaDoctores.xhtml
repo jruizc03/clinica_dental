@@ -53,7 +53,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton action="#{doctorBean.eliminar(doctor.idDoctor)}" value="Eliminar"></p:commandButton>
+				<p:commandButton update="@form" action="#{doctorBean.eliminar(doctor.idDoctor)}" value="Eliminar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>
