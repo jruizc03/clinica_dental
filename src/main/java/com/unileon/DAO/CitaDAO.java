@@ -9,47 +9,47 @@ import javax.persistence.Query;
 import com.unileon.modelo.Cita;
 import com.unileon.modelo.JPAUtil;
 
-public class CitaDAO
-{
+public class CitaDAO {
 	EntityManager entity = JPAUtil.getEntityManagerFactory().createEntityManager();
 	
-	//Guardar cita
-	public void guardarCita(Cita cita)
-	{
+	//Guardar doctor
+	public void guardar(Cita cita) {
 		entity.getTransaction().begin();
 		entity.persist(cita);
 		entity.getTransaction().commit();
 		//JPAUtil.shutdown();
 	}
 	
-	//Editar cita
-	public void editarCita(Cita cita)
-	{
+	//editar doctor
+	public void editar(Cita cita) {
 		entity.getTransaction().begin();
 		entity.merge(cita);
 		entity.getTransaction().commit();
 		//JPAUtil.shutdown();
 	}
 	
-	//Buscar cita
-	public Cita buscar(int id)
-	{
-		Cita cita = new Cita();
-		cita = entity.find(Cita.class, id);
-		JPAUtil.shutdown();
-		return cita;
+	//buscar doctor
+	public Cita buscar(int id) {
+		Cita c = new Cita();
+		c = entity.find(Cita.class, id);
+		//JPAUtil.shutdown();
+		return c;
 	}
 	
-	//Obtener todas las citas
-	public List<Cita> obtenerCitas()
-	{
+	//eliminar doctor
+	public void eliminar(int id) {
+		Cita c = new Cita();
+		c = entity.find(Cita.class, id);
+		entity.getTransaction().begin();
+		entity.remove(c);
+		entity.getTransaction().commit();
+	}
+	
+	//obtener todos los doctores
+	public List<Cita> obtenerCitas(){
 		List<Cita> listaCitas = new ArrayList<>();
-		Query query = entity.createQuery("SELECT c FROM Cita c");
-		listaCitas = query.getResultList();
+		Query q = entity.createQuery("SELECT c FROM Cita c");
+		listaCitas = q.getResultList();
 		return listaCitas;
 	}
-	
-	//Obtener citas de un doctor
-	
-	
 }
