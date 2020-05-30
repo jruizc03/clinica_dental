@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Clinica dental</title>
+</h:head>
+<h:body>
+	<h2>
+		<p:outputLabel value="Lista del inventario"></p:outputLabel>
+	</h2>
+	<h:form>
+	<p:commandButton action="/faces/ventanaAuxiliar.xhtml" value="Volver"/>
+	<p:commandButton action="#{inventarioBean.nuevoDesdeAux()}" value="Nuevo Item"></p:commandButton>
+		<p:dataTable value="#{inventarioBean.obtenerInventario()}" var="inventario"
+			border="1">
+			<p:column>
+				<f:facet name="header">Id</f:facet>
+				<p:outputLabel value="#{inventario.idInstrumento}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nombre del instrumento</f:facet>
+				<p:outputLabel value="#{inventario.nombreInstrumento}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Existencias</f:facet>
+				<p:outputLabel value="#{inventario.existencias}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Editar</f:facet>
+				<p:commandButton action="#{inventarioBean.editarDesdeAux(inventario.idInstrumento)}" value="Editar"></p:commandButton>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<p:commandButton update="@form" action="#{inventarioBean.eliminarDesdeAux(inventario.idInstrumento)}" value="Eliminar"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

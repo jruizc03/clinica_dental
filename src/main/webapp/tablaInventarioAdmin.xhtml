@@ -14,7 +14,8 @@
 		<p:outputLabel value="Lista del inventario"></p:outputLabel>
 	</h2>
 	<h:form>
-	<p:commandButton action="#{inventarioBean.nuevo()}" value="Nuevo Item"></p:commandButton>
+	<p:commandButton action="/faces/ventanaAdministrador.xhtml" value="Volver"/>
+	<p:commandButton action="#{inventarioBean.nuevoDesdeAdmin()}" value="Nuevo Item"></p:commandButton>
 		<p:dataTable value="#{inventarioBean.obtenerInventario()}" var="inventario"
 			border="1">
 			<p:column>
@@ -31,11 +32,11 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Editar</f:facet>
-				<p:commandButton action="#{inventarioBean.editar(inventario.idInstrumento)}" value="Editar"></p:commandButton>
+				<p:commandButton action="#{inventarioBean.editarDesdeAdmin(inventario.idInstrumento)}" value="Editar"></p:commandButton>
 			</p:column>
 			<p:column>
 				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton update="@form" action="#{inventarioBean.eliminar(inventario.idInstrumento)}" value="Eliminar"></p:commandButton>
+				<p:commandButton update="@form" action="#{inventarioBean.eliminarDesdeAdmin(inventario.idInstrumento)}" value="Eliminar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

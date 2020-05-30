@@ -14,17 +14,30 @@ import com.unileon.modelo.Inventario;
 @RequestScoped
 public class InventarioBean {
 	
-	public String nuevo() {
+	public String nuevoDesdeAdmin() {
 		Inventario i = new Inventario();
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("inventario", i);
 		return  "/faces/nuevoInstrumento.xhtml";
 	}
 	
-	public String guardar (Inventario inventario) {		
+	public String nuevoDesdeAux() {
+		Inventario i = new Inventario();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("inventario", i);
+		return  "/faces/nuevoInstrumentoAux.xhtml";
+	}
+	
+	public String guardarDesdeAdmin (Inventario inventario) {		
 		InventarioDAO inventarioDAO= new InventarioDAO();
 		inventarioDAO.guardar(inventario);
-		return  "/faces/tablaInventario.xhtml";
+		return  "/faces/tablaInventarioAdmin.xhtml";
+	}
+	
+	public String guardarDesdeAux (Inventario inventario) {		
+		InventarioDAO inventarioDAO= new InventarioDAO();
+		inventarioDAO.guardar(inventario);
+		return  "/faces/tablaInventarioAux.xhtml";
 	}
 
 	public List<Inventario> obtenerInventario() {
@@ -33,7 +46,7 @@ public class InventarioBean {
 		return inventarioDAO.obtenerInventario();
 	}
 
-	public String editar(int id) {
+	public String editarDesdeAdmin(int id) {
 		InventarioDAO inventarioDAO = new InventarioDAO();
 		Inventario i = new Inventario();
 		i = inventarioDAO.buscar(id);
@@ -42,21 +55,45 @@ public class InventarioBean {
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("inventario", i);
-		return "/faces/editarInstrumento.xhtml";
+		return "/faces/editarInstrumentoAdmin.xhtml";
+	}
+	
+	public String editarDesdeAux(int id) {
+		InventarioDAO inventarioDAO = new InventarioDAO();
+		Inventario i = new Inventario();
+		i = inventarioDAO.buscar(id);
+		System.out.println("******************************************");
+		System.out.println(i);
+
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("inventario", i);
+		return "/faces/editarInstrumentoAux.xhtml";
 	}
 
-	public String actualizar(Inventario doctor) {		
+	public String actualizarDesdeAdmin(Inventario doctor) {		
 		InventarioDAO inventarioDAO = new InventarioDAO();
 		inventarioDAO.editar(doctor);
-		return "/faces/tablaInventario.xhtml";
+		return "/faces/tablaInventarioAdmin.xhtml";
+	}
+	
+	public String actualizarDesdeAux(Inventario doctor) {		
+		InventarioDAO inventarioDAO = new InventarioDAO();
+		inventarioDAO.editar(doctor);
+		return "/faces/tablaInventarioAux.xhtml";
 	}
 
-	// eliminar un cliente
-	public String eliminar(int id) {
+	public String eliminarDesdeAdmin(int id) {
 		InventarioDAO inventarioDAO = new InventarioDAO();
 		inventarioDAO.eliminar(id);
 		System.out.println("Instrumento eliminado..");
-		return "/faces/tablaInventario.xhtml";
+		return "/faces/tablaInventarioAdmin.xhtml";
+	}
+	
+	public String eliminarDesdeAux(int id) {
+		InventarioDAO inventarioDAO = new InventarioDAO();
+		inventarioDAO.eliminar(id);
+		System.out.println("Instrumento eliminado..");
+		return "/faces/tablaInventarioAux.xhtml";
 	}
 
 }
