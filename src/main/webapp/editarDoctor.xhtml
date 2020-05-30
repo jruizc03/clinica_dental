@@ -35,6 +35,9 @@
 			
 			<p:outputLabel value="DNI"></p:outputLabel>
 			<p:inputText value="#{doctor.doctorDNI}"></p:inputText>
+			
+			<p:outputLabel value="Password"></p:outputLabel>
+			<p:password value="#{doctor.password}"></p:password>
 
 			<f:facet name="footer">
 				<p:commandButton action="#{doctorBean.actualizar(doctor)}" value="Actualizar"></p:commandButton>

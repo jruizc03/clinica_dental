@@ -15,6 +15,7 @@ public class DoctorDAO {
 	
 	//Guardar doctor
 	public void guardar(Doctor doctor) {
+		doctor.setPassword("doctor");
 		entity.getTransaction().begin();
 		entity.persist(doctor);
 		entity.getTransaction().commit();

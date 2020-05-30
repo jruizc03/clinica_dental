@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
+import javax.transaction.Transactional;
 
 import com.unileon.DAO.CitaDAO;
 import com.unileon.modelo.Cita;
@@ -25,6 +26,10 @@ public class CitaBean {
 	
 	public String guardar (Cita cita) {		
 		CitaDAO citaDAO= new CitaDAO();
+		System.out.println("----Cita que me llega para guardar:");
+		System.out.println("Doctor= " + cita.getDoctor().getNombreDoctor());
+		System.out.println("Paciente= " + cita.getPaciente().getNombrePaciente());
+		System.out.println("Tratamientox= " + cita.getHistorial().getTratamiento());
 		citaDAO.guardar(cita);
 		return  "/faces/tablaCitas.xhtml";
 	}
