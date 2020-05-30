@@ -14,7 +14,7 @@
 		<p:outputLabel value="Lista de pacientes"></p:outputLabel>
 	</h2>
 	<h:form>
-	<p:commandButton onclick="history.go(-1)" value="Volver"/>
+	<p:commandButton action="/faces/ventanaAuxiliar.xhtml" value="Volver"/>
 		<br></br>
 		<p:dataTable value="#{pacienteBean.obtenerPacientes()}" var="paciente"
 			border="1">
@@ -48,7 +48,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Editar</f:facet>
-				<p:commandButton action="#{pacienteBean.editar(paciente.idPaciente)}" value="Editar"></p:commandButton>
+				<p:commandButton action="#{pacienteBean.editarAux(paciente.idPaciente)}" value="Editar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

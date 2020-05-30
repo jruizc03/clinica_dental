@@ -33,9 +33,6 @@ public class Paciente {
 	@Column
 	private String emailPaciente;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaNacimientoPaciente;
-	
 	@Column
 	private String pacienteDNI;
 	
@@ -84,14 +81,6 @@ public class Paciente {
 
 	public void setEmailPaciente(String email) {
 		this.emailPaciente = email;
-	}
-
-	public Date getFechaNacimientoPaciente() {
-		return fechaNacimientoPaciente;
-	}
-
-	public void setFechaNacimientoPaciente(Date fechaNacimiento) {
-		this.fechaNacimientoPaciente = fechaNacimiento;
 	}
 
 	public String getPacienteDNI() {

@@ -7,35 +7,38 @@
 	<meta charset="utf-8" name="viewport"
 		content="width=device-width, initial-scale=1"
 		http-equiv="X-UA-Conpatible" />
-	<title>Creacion nuevo auxiliar</title>
+	<title>Editar un paciente</title>
 </h:head>
 <h:body>
+
 	<h:form>
 		<p:panelGrid columns="2" cellspacing="20" border="1">
 			<f:facet name="header">
-				<p:outputLabel value="Nuevo Auxiliar"></p:outputLabel>
+				<p:outputLabel value="Editar Paciente"></p:outputLabel>
 			</f:facet>
 
 			<p:outputLabel value="Nombre"></p:outputLabel>
-			<p:inputText value="#{auxiliar.nombreAuxiliar}"></p:inputText>
+			<p:inputText value="#{paciente.nombrePaciente}"></p:inputText>
 
 			<p:outputLabel value="Primer Apellido"></p:outputLabel>
-			<p:inputText value="#{auxiliar.primerApellidoAuxiliar}"></p:inputText>
+			<p:inputText value="#{paciente.primerApellidoPaciente}"></p:inputText>
 			
 			<p:outputLabel value="Segundo Apellido"></p:outputLabel>
-			<p:inputText value="#{auxiliar.segundoApellidoAuxiliar}"></p:inputText>
+			<p:inputText value="#{paciente.segundoApellidoPaciente}"></p:inputText>
 
 			<p:outputLabel value="Email"></p:outputLabel>
-			<p:inputText value="#{auxiliar.emailAuxiliar}"></p:inputText>
+			<p:inputText value="#{paciente.emailPaciente}"></p:inputText>
+			
+			<p:outputLabel value="Especialidad"></p:outputLabel>
+			<p:inputText value="#{paciente.direccionPaciente}"></p:inputText>
 			
 			<p:outputLabel value="DNI"></p:outputLabel>
-			<p:inputText value="#{auxiliar.auxiliarDNI}"></p:inputText>
+			<p:inputText value="#{paciente.pacienteDNI}"></p:inputText>
 
 			<f:facet name="footer">
-				<p:commandButton action="#{auxiliarBean.guardar(auxiliar)}"
-					value="Guardar"></p:commandButton>
+				<p:commandButton action="#{pacienteBean.actualizarAux(paciente)}" value="Actualizar"></p:commandButton>
 			</f:facet>
-
+			
 		</p:panelGrid>
 
 	</h:form>

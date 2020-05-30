@@ -30,10 +30,7 @@ public class Administrador {
 	
 	@Column
 	private String emailAdmin;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaNacimientoAdmin;
-	
+
 	@Column
 	private String adminDNI;
 	
@@ -78,14 +75,6 @@ public class Administrador {
 
 	public void setEmailAdmin(String emailAdmin) {
 		this.emailAdmin = emailAdmin;
-	}
-
-	public Date getFechaNacimientoAdmin() {
-		return fechaNacimientoAdmin;
-	}
-
-	public void setFechaNacimientoAdmin(Date fechaNacimientoAdmin) {
-		this.fechaNacimientoAdmin = fechaNacimientoAdmin;
 	}
 
 	public String getAdminDNI() {

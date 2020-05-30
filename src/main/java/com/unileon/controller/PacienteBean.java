@@ -63,10 +63,28 @@ public class PacienteBean {
 		return "/faces/editarPaciente.xhtml";
 	}
 
+	public String editarAux(int id) {
+		PacienteDAO pacienteDAO = new PacienteDAO();
+		Paciente p = new Paciente();
+		p = pacienteDAO.buscar(id);
+		System.out.println("******************************************");
+		System.out.println(p);
+
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("paciente", p);
+		return "/faces/editarPacienteAux.xhtml";
+	}
+	
 	public String actualizar(Paciente paciente) {		
 		PacienteDAO pacienteDAO = new PacienteDAO();
 		pacienteDAO.editar(paciente);
 		return "/faces/tablaPacientes.xhtml";
+	}
+	
+	public String actualizarAux(Paciente paciente) {		
+		PacienteDAO pacienteDAO = new PacienteDAO();
+		pacienteDAO.editar(paciente);
+		return "/faces/tablaPacientesSoloEditar.xhtml";
 	}
 
 	// eliminar un cliente

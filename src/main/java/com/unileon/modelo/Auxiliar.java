@@ -30,10 +30,7 @@ public class Auxiliar {
 	
 	@Column
 	private String emailAuxiliar;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaNacimientoAuxiliar;
-	
+
 	@Column
 	private String auxiliarDNI;
 	
@@ -78,14 +75,6 @@ public class Auxiliar {
 
 	public void setEmailAuxiliar(String email) {
 		this.emailAuxiliar = email;
-	}
-
-	public Date getFechaNacimientoAuxiliar() {
-		return fechaNacimientoAuxiliar;
-	}
-
-	public void setFechaNacimientoAuxiliar(Date fechaNacimiento) {
-		this.fechaNacimientoAuxiliar = fechaNacimiento;
 	}
 
 	public String getAuxiliarDNI() {

@@ -14,7 +14,7 @@
 		<p:outputLabel value="Lista Doctores"></p:outputLabel>
 	</h2>
 	<h:form>
-	<p:commandButton onclick="history.go(-1)" value="Volver"/>
+	<p:commandButton action="/faces/ventanaAdministrador.xhtml" value="Volver"/>
 		<br></br>
 	<p:commandButton action="#{doctorBean.nuevo()}" value="Nuevo Doctor"></p:commandButton>
 		<p:dataTable value="#{doctorBean.obtenerDoctores()}" var="doctor"
