@@ -14,10 +14,10 @@
 		<p:outputLabel value="Lista de citas "></p:outputLabel>
 	</h2>
 	<h:form>
-	<p:commandButton action="history.go(-1)" value="Volver"/>
+	<p:commandButton action="/faces/ventanaAuxiliar.xhtml" value="Volver"/>
 		<br></br>
 		
-	<p:commandButton action="#{citaBean.nuevo()}" value="Nueva Cita"></p:commandButton>
+	<p:commandButton action="#{citaBean.nuevoDesdeAux()}" value="Nueva Cita"></p:commandButton>
 		<p:dataTable value="#{citaBean.obtenerCitas()}" var="cita"
 			border="1">
 			<p:column>
@@ -38,11 +38,11 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Editar</f:facet>
-				<p:commandButton action="#{citaBean.editar(cita.idCita)}" value="Editar"></p:commandButton>
+				<p:commandButton action="#{citaBean.editarDesdeAux(cita.idCita)}" value="Editar"></p:commandButton>
 			</p:column>
 			<p:column>
 				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton update="@form" action="#{citaBean.eliminar(cita.idCita)}" value="Eliminar"></p:commandButton>
+				<p:commandButton update="@form" action="#{citaBean.eliminarDesdeAux(cita.idCita)}" value="Eliminar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

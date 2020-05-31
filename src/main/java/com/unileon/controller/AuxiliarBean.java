@@ -69,6 +69,10 @@ public class AuxiliarBean {
 		return "/faces/tablaPacientesSoloEditar.xhtml";
 	}
 	
+	public String mostrarCitas() {
+		return "/faces/tablaCitasAux.xhtml";
+	}
+	
 	public String volverPrincipal()
 	{
 		return "/faces/ventanaAuxiliar.xhtml";

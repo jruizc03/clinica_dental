@@ -78,7 +78,7 @@ public class AdministradorBean {
 	}
 	
 	public String mostrarCitas() {
-		return "/faces/tablaCitas.xhtml";
+		return "/faces/tablaCitasAdmin.xhtml";
 	}
 
 	public String volverPrincipal()

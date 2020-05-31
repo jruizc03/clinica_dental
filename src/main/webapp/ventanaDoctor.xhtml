@@ -17,7 +17,7 @@
  	<h:form style="margin-top:20px;"> 
     	<p:growl id="growl" life="2000" />
 	    <p:commandButton action="#{doctorBean.mostrarPacientes()}" value = "Modificar pacientes" update="growl" style="margin-right:20px; margin-bottom: 20px;" />
-	    <p:commandButton  value = "Modificar citas" update="growl" style="margin-right:20px; margin-bottom: 20px;" /> 
+	    <p:commandButton action="#{doctorBean.mostrarCitas()}" value = "Modificar citas" update="growl" style="margin-right:20px; margin-bottom: 20px;" /> 
 	</h:form>
 
 	<p:sidebar widgetVar="sidebar1" baseZIndex="10000">

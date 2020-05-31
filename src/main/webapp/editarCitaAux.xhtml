@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Editar una cita</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<p:panelGrid columns="2" cellspacing="20" border="1">
+		
+			<f:facet name="header">
+				<p:outputLabel value="Editar Cita"></p:outputLabel>
+			</f:facet>
+			
+			<p:outputLabel value="Nombre del doctor"></p:outputLabel>
+			<p:selectOneMenu value="#{cita.doctor.nombreDoctor}">
+				<f:selectItems value="#{doctorBean.nombres}"></f:selectItems>
+			</p:selectOneMenu>
+			
+			<p:outputLabel value="Nombre del paciente"></p:outputLabel>
+			<p:selectOneMenu value="#{cita.paciente.nombrePaciente}">
+				<f:selectItems value="#{pacienteBean.nombres}"></f:selectItems>
+			</p:selectOneMenu>
+			
+			<p:outputLabel value="Tratamiento"></p:outputLabel>
+			<p:selectOneMenu value="#{cita.historial.tratamiento}">
+				<f:selectItems value="#{historialBean.tratamientos}"></f:selectItems>
+			</p:selectOneMenu>
+
+			<f:facet name="footer">
+				<p:commandButton action="#{citaBean.actualizarDesdeAux(cita)}" value="Actualizar"></p:commandButton>
+			</f:facet>
+			
+		</p:panelGrid>
+
+	</h:form>
+
+</h:body>
+</html>

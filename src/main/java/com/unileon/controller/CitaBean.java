@@ -17,21 +17,43 @@ import com.unileon.modelo.Cita;
 @RequestScoped
 public class CitaBean {
 	
-	public String nuevo() {
+	public String nuevoDesdeAdmin() {
 		Cita c = new Cita();
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("auxiliar", c);
-		return  "/faces/nuevaCita.xhtml";
+		return  "/faces/nuevaCitaAdmin.xhtml";
 	}
 	
-	public String guardar (Cita cita) {		
+	public String nuevoDesdeDoctor() {
+		Cita c = new Cita();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("auxiliar", c);
+		return  "/faces/nuevaCitaDoctor.xhtml";
+	}
+	
+	public String nuevoDesdeAux() {
+		Cita c = new Cita();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("auxiliar", c);
+		return  "/faces/nuevaCitaAux.xhtml";
+	}
+	
+	public String guardarDesdeAdmin(Cita cita) {		
 		CitaDAO citaDAO= new CitaDAO();
-		System.out.println("----Cita que me llega para guardar:");
-		System.out.println("Doctor= " + cita.getDoctor().getNombreDoctor());
-		System.out.println("Paciente= " + cita.getPaciente().getNombrePaciente());
-		System.out.println("Tratamientox= " + cita.getHistorial().getTratamiento());
 		citaDAO.guardar(cita);
-		return  "/faces/tablaCitas.xhtml";
+		return  "/faces/tablaCitasAdmin.xhtml";
+	}
+	
+	public String guardarDesdeDoctor(Cita cita) {		
+		CitaDAO citaDAO= new CitaDAO();
+		citaDAO.guardar(cita);
+		return  "/faces/tablaCitasDoctor.xhtml";
+	}
+	
+	public String guardarDesdeAux(Cita cita) {		
+		CitaDAO citaDAO= new CitaDAO();
+		citaDAO.guardar(cita);
+		return  "/faces/tablaCitasAux.xhtml";
 	}
 
 	public List<Cita> obtenerCitas() {
@@ -40,7 +62,7 @@ public class CitaBean {
 		return citaDAO.obtenerCitas();
 	}
 
-	public String editar(int id) {
+	public String editarDesdeAdmin(int id) {
 		CitaDAO citaDAO = new CitaDAO();
 		Cita c = new Cita();
 		c = citaDAO.buscar(id);
@@ -49,24 +71,69 @@ public class CitaBean {
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("cita", c);
-		return "/faces/editarCita.xhtml";
+		return "/faces/editarCitaAdmin.xhtml";
+	}
+	
+	public String editarDesdeDoctor(int id) {
+		CitaDAO citaDAO = new CitaDAO();
+		Cita c = new Cita();
+		c = citaDAO.buscar(id);
+		System.out.println("******************************************");
+		System.out.println(c);
+
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("cita", c);
+		return "/faces/editarCitaDoctor.xhtml";
+	}
+	
+	public String editarDesdeAux(int id) {
+		CitaDAO citaDAO = new CitaDAO();
+		Cita c = new Cita();
+		c = citaDAO.buscar(id);
+		System.out.println("******************************************");
+		System.out.println(c);
+
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("cita", c);
+		return "/faces/editarCitaAux.xhtml";
 	}
 
-	public String actualizar(Cita cita) {		
+	public String actualizarDesdeAdmin(Cita cita) {		
 		CitaDAO citaDAO = new CitaDAO();
 		citaDAO.editar(cita);
-		System.out.println("-------Cita:");
-		System.out.println("Doctor= " + cita.getDoctor().getNombreDoctor());
-		System.out.println("Paciente= " + cita.getPaciente().getNombrePaciente());
-		System.out.println("Tratamientox= " + cita.getHistorial().getTratamiento());
-		return "/faces/tablaCitas.xhtml";
+		return "/faces/tablaCitasAdmin.xhtml";
+	}
+	
+	public String actualizarDesdeDoctor(Cita cita) {		
+		CitaDAO citaDAO = new CitaDAO();
+		citaDAO.editar(cita);
+		return "/faces/tablaCitasDoctor.xhtml";
+	}
+	
+	public String actualizarDesdeAux(Cita cita) {		
+		CitaDAO citaDAO = new CitaDAO();
+		citaDAO.editar(cita);
+		return "/faces/tablaCitasAux.xhtml";
 	}
 
-	// eliminar un cliente
-	public String eliminar(int id) {
+	public String eliminarDesdeAdmin(int id) {
 		CitaDAO citaDAO = new CitaDAO();
 		citaDAO.eliminar(id);
 		System.out.println("Auxiliar eliminado..");
-		return "/faces/tablaCitas.xhtml";
+		return "/faces/tablaCitasAdmin.xhtml";
+	}
+	
+	public String eliminarDesdeDoctor(int id) {
+		CitaDAO citaDAO = new CitaDAO();
+		citaDAO.eliminar(id);
+		System.out.println("Auxiliar eliminado..");
+		return "/faces/tablaCitasDoctor.xhtml";
+	}
+	
+	public String eliminarDesdeAux(int id) {
+		CitaDAO citaDAO = new CitaDAO();
+		citaDAO.eliminar(id);
+		System.out.println("Auxiliar eliminado..");
+		return "/faces/tablaCitasAux.xhtml";
 	}
 }

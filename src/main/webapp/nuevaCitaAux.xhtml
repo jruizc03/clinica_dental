@@ -7,17 +7,15 @@
 	<meta charset="utf-8" name="viewport"
 		content="width=device-width, initial-scale=1"
 		http-equiv="X-UA-Conpatible" />
-	<title>Editar una cita</title>
+	<title>Creacion de una nueva cita</title>
 </h:head>
 <h:body>
-
-	<h:form>
+		<br></br>
 		<p:panelGrid columns="2" cellspacing="20" border="1">
-		
 			<f:facet name="header">
-				<p:outputLabel value="Editar Cita"></p:outputLabel>
+				<p:outputLabel value="Nueva Cita"></p:outputLabel>
 			</f:facet>
-			
+
 			<p:outputLabel value="Nombre del doctor"></p:outputLabel>
 			<p:selectOneMenu value="#{cita.doctor.nombreDoctor}">
 				<f:selectItems value="#{doctorBean.nombres}"></f:selectItems>
@@ -34,9 +32,9 @@
 			</p:selectOneMenu>
 
 			<f:facet name="footer">
-				<p:commandButton action="#{citaBean.actualizar(cita)}" value="Actualizar"></p:commandButton>
+				<p:commandButton action="#{citaBean.guardarDesdeAux(cita)}"
+					value="Guardar"></p:commandButton>
 			</f:facet>
-			
 		</p:panelGrid>
 
 	</h:form>

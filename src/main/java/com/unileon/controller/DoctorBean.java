@@ -79,6 +79,10 @@ public class DoctorBean {
 	public String mostrarPacientes() {
 		return "/faces/tablaPacientesDoctor.xhtml";
 	}
+	
+	public String mostrarCitas() {
+		return "/faces/tablaCitasDoctor.xhtml";
+	}
 
 	public String getNombre() {
 		return nombre;

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Clinica dental</title>
+</h:head>
+<h:body>
+	<h2>
+		<p:outputLabel value="Lista de citas "></p:outputLabel>
+	</h2>
+	<h:form>
+	<p:commandButton action="/faces/ventanaDoctor.xhtml" value="Volver"/>
+		<br></br>
+		
+	<p:commandButton action="#{citaBean.nuevoDesdeDoctor()}" value="Nueva Cita"></p:commandButton>
+		<p:dataTable value="#{citaBean.obtenerCitas()}" var="cita"
+			border="1">
+			<p:column>
+				<f:facet name="header">Id</f:facet>
+				<p:outputLabel value="#{cita.idCita}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nombre del doctor</f:facet>
+				<p:outputLabel value="#{cita.doctor.nombreDoctor}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nombre del paciente</f:facet>
+				<p:outputLabel value="#{cita.paciente.nombrePaciente}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Tratamiento</f:facet>
+				<p:outputLabel value="#{cita.historial.tratamiento}"></p:outputLabel>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Editar</f:facet>
+				<p:commandButton action="#{citaBean.editarDesdeDoctor(cita.idCita)}" value="Editar"></p:commandButton>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<p:commandButton update="@form" action="#{citaBean.eliminarDesdeDoctor(cita.idCita)}" value="Eliminar"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
