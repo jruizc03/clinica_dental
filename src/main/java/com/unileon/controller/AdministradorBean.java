@@ -74,7 +74,7 @@ public class AdministradorBean {
 	}
 	
 	public String mostrarInventario() {
-		return "/faces/tablaInventario.xhtml";
+		return "/faces/tablaInventarioAdmin.xhtml";
 	}
 	
 	public String mostrarCitas() {

@@ -39,8 +39,6 @@ public class AuxiliarBean {
 		AuxiliarDAO auxiliarDAO = new AuxiliarDAO();
 		Auxiliar a = new Auxiliar();
 		a = auxiliarDAO.buscar(id);
-		System.out.println("******************************************");
-		System.out.println(a);
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("auxiliar", a);
@@ -53,16 +51,14 @@ public class AuxiliarBean {
 		return "/faces/tablaAuxiliares.xhtml";
 	}
 
-	// eliminar un cliente
 	public String eliminar(int id) {
 		AuxiliarDAO auxiliarDAO = new AuxiliarDAO();
 		auxiliarDAO.eliminar(id);
-		System.out.println("Auxiliar eliminado..");
 		return "/faces/tablaAuxiliares.xhtml";
 	}
 	
 	public String mostrarInventario() {
-		return "/faces/tablaInventario.xhtml";
+		return "/faces/tablaInventarioAux.xhtml";
 	}
 	
 	public String mostrarPacientes() {

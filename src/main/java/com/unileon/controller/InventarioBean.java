@@ -18,7 +18,7 @@ public class InventarioBean {
 		Inventario i = new Inventario();
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("inventario", i);
-		return  "/faces/nuevoInstrumento.xhtml";
+		return  "/faces/nuevoInstrumentoAdmin.xhtml";
 	}
 	
 	public String nuevoDesdeAux() {

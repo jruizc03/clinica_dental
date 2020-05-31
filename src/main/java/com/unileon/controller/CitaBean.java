@@ -66,8 +66,6 @@ public class CitaBean {
 		CitaDAO citaDAO = new CitaDAO();
 		Cita c = new Cita();
 		c = citaDAO.buscar(id);
-		System.out.println("******************************************");
-		System.out.println(c);
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("cita", c);
@@ -78,8 +76,6 @@ public class CitaBean {
 		CitaDAO citaDAO = new CitaDAO();
 		Cita c = new Cita();
 		c = citaDAO.buscar(id);
-		System.out.println("******************************************");
-		System.out.println(c);
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("cita", c);
@@ -90,8 +86,6 @@ public class CitaBean {
 		CitaDAO citaDAO = new CitaDAO();
 		Cita c = new Cita();
 		c = citaDAO.buscar(id);
-		System.out.println("******************************************");
-		System.out.println(c);
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("cita", c);
@@ -119,21 +113,18 @@ public class CitaBean {
 	public String eliminarDesdeAdmin(int id) {
 		CitaDAO citaDAO = new CitaDAO();
 		citaDAO.eliminar(id);
-		System.out.println("Auxiliar eliminado..");
 		return "/faces/tablaCitasAdmin.xhtml";
 	}
 	
 	public String eliminarDesdeDoctor(int id) {
 		CitaDAO citaDAO = new CitaDAO();
 		citaDAO.eliminar(id);
-		System.out.println("Auxiliar eliminado..");
 		return "/faces/tablaCitasDoctor.xhtml";
 	}
 	
 	public String eliminarDesdeAux(int id) {
 		CitaDAO citaDAO = new CitaDAO();
 		citaDAO.eliminar(id);
-		System.out.println("Auxiliar eliminado..");
 		return "/faces/tablaCitasAux.xhtml";
 	}
 }
