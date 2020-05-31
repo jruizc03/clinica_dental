@@ -31,19 +31,6 @@ public class DoctorBean {
 		nombres = Arrays.asList(nombresDoctores);
 	}
 	
-	//Estos 3 metodos son para probar las ventanas. No deben estar aqui despues.
-	public String ventanaAdmin() {
-		return "/faces/ventanaAdministrador.xhtml";
-	}
-	
-	public String ventanaDoctor() {
-		return "/faces/ventanaDoctor.xhtml";
-	}
-	
-	public String ventanaAuxiliar() {
-		return "/faces/ventanaAuxiliar.xhtml";
-	}
-	
 	public String nuevo() {
 		Doctor d = new Doctor();
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
@@ -90,7 +77,7 @@ public class DoctorBean {
 	}
 	
 	public String mostrarPacientes() {
-		return "/faces/tablaPacientes.xhtml";
+		return "/faces/tablaPacientesDoctor.xhtml";
 	}
 
 	public String getNombre() {

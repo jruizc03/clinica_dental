@@ -14,9 +14,9 @@
 		<p:outputLabel value="Lista de pacientes"></p:outputLabel>
 	</h2>
 	<h:form>
-	<p:commandButton action="/faces/ventanaAdministrador.xhtml" value="Volver"/>
+	<p:commandButton action="/faces/ventanaDoctor.xhtml" value="Volver"/>
 		<br></br>
-	<p:commandButton action="#{pacienteBean.nuevo()}" value="Nuevo Paciente"></p:commandButton>
+	<p:commandButton action="#{pacienteBean.nuevoDesdeDoctor()}" value="Nuevo Paciente"></p:commandButton>
 		<p:dataTable value="#{pacienteBean.obtenerPacientes()}" var="paciente"
 			border="1">
 			<p:column>
@@ -57,11 +57,11 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Editar</f:facet>
-				<p:commandButton action="#{pacienteBean.editar(paciente.idPaciente)}" value="Editar"></p:commandButton>
+				<p:commandButton action="#{pacienteBean.editarDesdeDoctor(paciente.idPaciente)}" value="Editar"></p:commandButton>
 			</p:column>
 			<p:column>
 				<f:facet name="header">Eliminar</f:facet>
-				<p:commandButton update="@form" action="#{pacienteBean.eliminar(paciente.idPaciente)}" value="Eliminar"></p:commandButton>
+				<p:commandButton update="@form" action="#{pacienteBean.eliminarDesdeDoctor(paciente.idPaciente)}" value="Eliminar"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

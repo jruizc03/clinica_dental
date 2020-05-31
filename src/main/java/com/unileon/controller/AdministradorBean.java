@@ -70,7 +70,7 @@ public class AdministradorBean {
 	}
 	
 	public String mostrarPacientes() {
-		return "/faces/tablaPacientes.xhtml";
+		return "/faces/tablaPacientesAdmin.xhtml";
 	}
 	
 	public String mostrarInventario() {

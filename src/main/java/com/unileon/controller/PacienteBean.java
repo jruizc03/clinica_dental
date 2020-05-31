@@ -32,17 +32,30 @@ public class PacienteBean {
 		nombres = Arrays.asList(nombresPacientes);
 	}
 	
-	public String nuevo() {
+	public String nuevoDesdeAdmin() {
 		Paciente p = new Paciente();
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("paciente", p);
-		return  "/faces/nuevoPaciente.xhtml";
+		return  "/faces/nuevoPacienteAdmin.xhtml";
 	}
 	
-	public String guardar (Paciente paciente) {		
+	public String nuevoDesdeDoctor() {
+		Paciente p = new Paciente();
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("paciente", p);
+		return  "/faces/nuevoPacienteDoctor.xhtml";
+	}
+	
+	public String guardarDesdeAdmin(Paciente paciente) {		
 		PacienteDAO pacienteDAO= new PacienteDAO();
 		pacienteDAO.guardar(paciente);
-		return  "/faces/tablaPacientes.xhtml";
+		return  "/faces/tablaPacientesAdmin.xhtml";
+	}
+	
+	public String guardarDesdeDoctor(Paciente paciente) {		
+		PacienteDAO pacienteDAO= new PacienteDAO();
+		pacienteDAO.guardar(paciente);
+		return  "/faces/tablaPacientesDoctor.xhtml";
 	}
 
 	public List<Paciente> obtenerPacientes() {
@@ -51,7 +64,7 @@ public class PacienteBean {
 		return pacienteDAO.obtenerPacientes();
 	}
 
-	public String editar(int id) {
+	public String editarDesdeAdmin(int id) {
 		PacienteDAO pacienteDAO = new PacienteDAO();
 		Paciente p = new Paciente();
 		p = pacienteDAO.buscar(id);
@@ -60,7 +73,19 @@ public class PacienteBean {
 
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("paciente", p);
-		return "/faces/editarPaciente.xhtml";
+		return "/faces/editarPacienteAdmin.xhtml";
+	}
+	
+	public String editarDesdeDoctor(int id) {
+		PacienteDAO pacienteDAO = new PacienteDAO();
+		Paciente p = new Paciente();
+		p = pacienteDAO.buscar(id);
+		System.out.println("******************************************");
+		System.out.println(p);
+
+		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+		sessionMap.put("paciente", p);
+		return "/faces/editarPacienteDoctor.xhtml";
 	}
 
 	public String editarAux(int id) {
@@ -75,10 +100,16 @@ public class PacienteBean {
 		return "/faces/editarPacienteAux.xhtml";
 	}
 	
-	public String actualizar(Paciente paciente) {		
+	public String actualizarDesdeAdmin(Paciente paciente) {		
 		PacienteDAO pacienteDAO = new PacienteDAO();
 		pacienteDAO.editar(paciente);
-		return "/faces/tablaPacientes.xhtml";
+		return "/faces/tablaPacientesAdmin.xhtml";
+	}
+	
+	public String actualizarDesdeDoctor(Paciente paciente) {		
+		PacienteDAO pacienteDAO = new PacienteDAO();
+		pacienteDAO.editar(paciente);
+		return "/faces/tablaPacientesDoctor.xhtml";
 	}
 	
 	public String actualizarAux(Paciente paciente) {		
@@ -87,12 +118,18 @@ public class PacienteBean {
 		return "/faces/tablaPacientesSoloEditar.xhtml";
 	}
 
-	// eliminar un cliente
-	public String eliminar(int id) {
+	public String eliminarDesdeAdmin(int id) {
 		PacienteDAO pacienteDAO = new PacienteDAO();
 		pacienteDAO.eliminar(id);
 		System.out.println("Paciente eliminado..");
-		return "/faces/tablaPacientes.xhtml";
+		return "/faces/tablaPacientesAdmin.xhtml";
+	}
+	
+	public String eliminarDesdeDoctor(int id) {
+		PacienteDAO pacienteDAO = new PacienteDAO();
+		pacienteDAO.eliminar(id);
+		System.out.println("Paciente eliminado..");
+		return "/faces/tablaPacientesDoctor.xhtml";
 	}
 
 	public String getNombre() {
