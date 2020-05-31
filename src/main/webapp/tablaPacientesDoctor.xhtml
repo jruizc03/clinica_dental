@@ -48,14 +48,6 @@
 				<p:outputLabel value="#{paciente.pacienteDNI}"></p:outputLabel>
 			</p:column>
 			<p:column>
-				<f:facet name="header">Dolencia</f:facet>
-				<p:outputLabel value="#{paciente.historial.dolencia}"></p:outputLabel>
-			</p:column>
-			<p:column>
-				<f:facet name="header">Tratamiento</f:facet>
-				<p:outputLabel value="#{paciente.historial.tratamiento}"></p:outputLabel>
-			</p:column>
-			<p:column>
 				<f:facet name="header">Editar</f:facet>
 				<p:commandButton action="#{pacienteBean.editarDesdeDoctor(paciente.idPaciente)}" value="Editar"></p:commandButton>
 			</p:column>
